@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="tg">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b12"><meta name="application-name" content="HTML to APK"><meta name="author" content="HASANEX"><meta name="description" content="HTML to APK — HASANEX Android APK builder.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x2='1' y2='1'%3E%3Cstop stop-color='%2335b8ff'/%3E%3Cstop offset='1' stop-color='%230867c6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial' font-size='42' font-weight='bold' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+<title>HTML to APK · HASANEX PRO 14.1</title>
+<style>
+:root{--bg:#080b12;--panel:#121925;--panel2:#192435;--line:#26364b;--text:#f4f7fb;--muted:#9ba9bc;--blue:#29a9ff;--blue2:#087ed1;--green:#25c58a;--yellow:#ffc857;--red:#ff6678;--radius:20px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% -10%,#142b46 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:900px;margin:auto;min-height:100vh;padding-bottom:88px}
+header{position:sticky;top:0;z-index:5;background:#080b12eF;backdrop-filter:blur(16px);border-bottom:1px solid #1b293a;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:11px;align-items:center}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#35b8ff,#0867c6);display:grid;place-items:center;font-weight:900;font-size:19px;box-shadow:0 8px 24px #087ed155}.brand b{display:block;font-size:16px;letter-spacing:.3px}.brand small{color:var(--muted)}
+select,.mini-btn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:9px 11px}
+main{padding:20px 16px}.screen{display:none}.screen.active{display:block}.eyebrow{color:var(--blue);font-weight:750;letter-spacing:.08em;text-transform:uppercase;font-size:11px}
+h1{font-size:clamp(25px,6vw,34px);line-height:1.12;margin:7px 0 8px}h2{font-size:21px;margin:0 0 7px}h3{font-size:16px;margin:0 0 6px}.muted{color:var(--muted)}.sub{color:var(--muted);margin:0 0 20px}
+.hero{padding:22px;border:1px solid #24405c;border-radius:25px;background:linear-gradient(130deg,#102c47,#121b2b 68%);margin:8px 0 20px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:#1e9cff22;right:-65px;top:-75px}.hero p{color:#bfd2e6;max-width:510px;margin:8px 0 0}.hero .chip{display:inline-block;background:#1c91df25;color:#8ed4ff;border:1px solid #2879ad66;border-radius:99px;padding:5px 10px;font-size:12px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-align:left;color:var(--text);width:100%;transition:.18s}.card:active{transform:scale(.985)}.card .ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#1b8cdb22;color:#66c4ff;font-size:22px;margin-bottom:12px}.card p{margin:5px 0 0;color:var(--muted);font-size:13px}.card .arrow{float:right;color:var(--blue);font-size:22px}.wide{grid-column:1/-1}.section-title{display:flex;align-items:center;justify-content:space-between;margin:22px 2px 11px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:17px;margin:12px 0}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.field{margin:13px 0}.field label{display:block;color:#c8d5e5;font-weight:650;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;background:#090f18;color:var(--text);border:1px solid #33445b;border-radius:12px;padding:12px;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #29a9ff20}.field textarea{min-height:150px;resize:vertical;font-family:ui-monospace,monospace;font-size:13px}
+.btn{border:0;border-radius:14px;padding:13px 17px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:white;font-weight:800;box-shadow:0 8px 22px #087ed133}.btn.secondary{background:#172538;border:1px solid #38516e;color:#d9eaff;box-shadow:none}.btn.ghost{background:transparent;border:1px solid #43536a;color:#b9dfff;box-shadow:none}.btn.danger{background:#3a1d29;color:#ffb2bd;border:1px solid #733448;box-shadow:none}.btn:disabled{opacity:.45;cursor:not-allowed}.full{width:100%}
+.filebox{border:1.5px dashed #3e6b92;border-radius:17px;padding:20px;text-align:center;background:#0e1c2b}.filebox strong{display:block;margin:7px 0}.filebox input{display:none}.filelist{margin-top:12px}.fileitem{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 11px;background:#0b121c;border:1px solid #26374a;border-radius:11px;margin-top:7px;font-size:13px}.tag{font-size:11px;border-radius:99px;padding:4px 8px;background:#123f35;color:#8af0c9}
+.bottom{position:fixed;z-index:6;bottom:0;left:0;right:0;background:#080b12f2;border-top:1px solid #1d2b3d;backdrop-filter:blur(18px);display:flex;justify-content:center}.bottom-inner{max-width:900px;width:100%;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}.tab{background:none;border:0;color:#7f91a7;padding:7px 3px;font-size:11px}.tab span{display:block;font-size:20px;margin-bottom:2px}.tab.active{color:#52bdff}
+.progress{height:8px;background:#273447;border-radius:99px;overflow:hidden;margin:11px 0 20px}.progress i{display:block;height:100%;background:linear-gradient(90deg,#1e9eff,#5bd5ff);border-radius:99px;width:10%;transition:.2s}.stephead{display:flex;justify-content:space-between;color:#65c6ff;font-weight:750;font-size:13px}
+.wizard-actions{display:flex;gap:10px;margin:18px 0}.wizard-actions button{flex:1}
+.choice{display:flex;gap:11px;align-items:flex-start;padding:12px;background:#0b121c;border:1px solid #2b3b50;border-radius:14px;margin:9px 0}.choice input{accent-color:var(--blue);width:18px;height:18px;margin-top:3px}.choice small{display:block;color:var(--muted)}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}.swatch{width:35px;height:35px;border-radius:50%;border:3px solid #111b28;outline:1px solid #52657a}.swatch.selected{outline:3px solid var(--blue)}
+.preview{background:#fff;color:#111;border-radius:14px;overflow:hidden;min-height:180px}.preview iframe{width:100%;height:360px;border:0;background:white}.modal{backdrop-filter:blur(8px)}
+.log{font:12px/1.6 ui-monospace,monospace;background:#060a10;border:1px solid #27374a;border-radius:13px;padding:12px;max-height:210px;overflow:auto;color:#a8d8ff;white-space:pre-wrap}
+.notice{border-left:3px solid var(--yellow);background:#30281755;padding:11px 13px;border-radius:8px;color:#e8d7aa;font-size:13px;margin:12px 0}.success{border-left-color:var(--green);background:#12312666;color:#a7f0d0}
+small.help{color:var(--muted);display:block;margin-top:6px}
+@media(min-width:650px){main{padding:28px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:28px}.panel{padding:22px}}
+
+.home-actions{grid-template-columns:1fr 1fr}
+.home-actions .primary-card{grid-column:1/-1;border-color:#268bd0;background:linear-gradient(135deg,#123b5c,#142235);padding:20px}
+.home-actions .primary-card .ico{width:50px;height:50px;font-size:25px}
+.home-actions .card:not(.primary-card){padding:13px}
+.home-actions .card:not(.primary-card) .ico{width:38px;height:38px;font-size:19px;margin-bottom:8px}
+.nav-three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:380px){.home-actions{grid-template-columns:1fr}.home-actions .primary-card{grid-column:auto}}
+
+.support-card{margin:18px 0 28px;padding:18px;border-radius:20px;background:linear-gradient(135deg,#21164b,#173d59);border:1px solid rgba(115,220,255,.45);color:#fff;box-shadow:0 10px 30px rgba(30,40,100,.18)}
+.support-card h3{margin:0 0 9px;color:#ffe08a;font-size:18px}.support-card p{color:#f1f5ff;line-height:1.65;margin:8px 0}.support-card .support-thanks{color:#b8f3e2;font-weight:700}.support-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.support-links a{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:12px;text-decoration:none;font-weight:800;color:#17152b;background:#ffe08a}.support-links a.tiktok{background:#8de9e2}.support-lang{display:none}.support-lang.active{display:block}.guide-lang{display:none}.guide-lang.active{display:block}
+.brand .logo{font-size:25px;letter-spacing:-1px;color:#fff;text-shadow:0 1px 8px #001a33}
+.brand b{font-size:17px}.brand small{font-weight:700;letter-spacing:.08em;color:#77caff}
+.brand-mark{display:inline-flex;align-items:center;gap:8px;font-weight:900;letter-spacing:.12em;color:#8bd5ff}
+.brand-mark .mark{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:linear-gradient(145deg,#35b8ff,#0867c6);color:white;box-shadow:0 5px 16px #087ed155}
+.protect-note{border:1px solid #2879ad66;background:#10253a;border-radius:14px;padding:12px 14px;margin:14px 0;color:#c5e8ff;font-size:13px}
+body.hasanex-guard{-webkit-tap-highlight-color:transparent}
+body.hasanex-guard{-webkit-user-select:none;user-select:none}
+input,textarea,select,[contenteditable="true"],.preview,iframe{-webkit-user-select:text;user-select:text}
+
+
+
+.ai-config-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:10px;margin-top:12px}
+.ai-model-card{background:#0b1320;border:1px solid #2b3c52;border-radius:15px;padding:13px;min-width:0}
+.ai-model-card .field{margin:9px 0}.ai-model-card .field input{padding:10px;font-size:13px}
+.ai-model-card .ai-tick{display:flex;gap:9px;align-items:center;font-weight:750;color:#e8f3ff;margin-bottom:7px}
+.ai-model-card .ai-tick input{width:18px;height:18px;accent-color:#29a9ff}
+.ai-results{display:grid;gap:12px;margin-top:12px}.ai-result-card{background:#0b1320;border:1px solid #2b3c52;border-radius:15px;padding:13px}
+.ai-result-card textarea{width:100%;min-height:160px;background:#070d16;color:#e8f3ff;border:1px solid #34465e;border-radius:10px;padding:10px;font:12px/1.4 ui-monospace,monospace}
+.ai-status-line{font-size:13px;color:#b9cbe0;margin:8px 0}.ai-result-card .row{margin-top:9px}
+.ai-result-card .row>*{flex:1 1 130px}
+details.ai-settings>summary{cursor:pointer;color:#91d6ff;font-weight:800;padding:8px 0}
+</style></head>
+<body><div class="app">
+<header><div class="brand"><div class="logo" aria-label="HASANEX logo">H</div><div><b>HTML to APK</b><small>HASANEX · PRO 14.1</small></div></div><select id="lang" aria-label="Language"><option value="tg">Тоҷикӣ</option><option value="ru">Русский</option><option value="en">English</option></select></header>
+<main>
+<section id="home" class="screen active">
+<div class="hero"><span class="chip">✦ HASANEX · PRO · HTML to APK</span><h1 data-i="welcome">Барномаи худро ба APK табдил деҳ.</h1><p data-i="intro">HTML ё сайти худро интихоб кун, танзимотро пур кун ва лоиҳаи Android гир. APK-ро дар худи телефон бо муҳити маҳаллии Android соз — бе аккаунти GitHub.</p></div>
+<div class="protect-note"><span class="brand-mark"><span class="mark">H</span> HASANEX</span> · HTML to APK PRO <b>14.1</b><br><span data-i="protectIntro">Муҳофизати иловагӣ аз нусхабардории тасодуфӣ фаъол аст.</span></div>
+ <div class="notice" style="margin-top:14px" data-i="buildNotice">Муҳим: барои сохтани APK сервери HASANEX лозим аст. HTML-и худро интихоб кун; сервер APK-и насбшавандаро месозад ва мустақим ба телефон бармегардонад.</div>
+<div class="section-title"><h2 data-i="create">Оғози кор</h2><span class="muted">HASANEX 14.1</span></div>
+<div class="grid home-actions">
+<button class="card primary-card" onclick="startWizard('advanced')">
+<div class="ico">🚀</div><h3 data-i="homeCard">Сохтани барнома</h3>
+<p data-i="homeCardDesc">HTML ё папкаи сайтро интихоб карда, лоиҳаи Android барои сохтани APK дар телефон омода кун.</p></button>
+<button class="card" onclick="show('ai')"><div class="ico">🤖</div><h3>ИИ-программист</h3><p>Бо забони одӣ барнома ё бозӣ соз, кодро ислоҳ кун ва HTML ё ZIP гир.</p></button>
+<button class="card" onclick="show('editor')">
+<div class="ico">🧑‍💻</div><h3 data-i="editorCard">Муҳаррири HTML</h3>
+<p data-i="editorCardDesc">Кодро таҳрир кун ва пешнамоишро бин.</p></button>
+<button class="card" onclick="show('pdf')">
+<div class="ico">📄</div><h3 data-i="pdfCard">Кушодани PDF</h3>
+<p data-i="pdfCardDesc">Ҳуҷҷати PDF-ро бин.</p></button>
+</div>
+<div class="section-title"><h2 data-i="recent">Лоиҳаи охирин</h2></div>
+<div id="recentBox" class="panel muted" data-i="noRecent">Ҳоло лоиҳа захира нашудааст.</div>
+</section>
+
+<section id="wizard" class="screen">
+<div class="row" style="justify-content:space-between"><button class="btn ghost" onclick="show('home')">← <span data-i="backHome">Асосӣ</span></button><span class="tag" id="modeTag">ADVANCED</span></div>
+<h1 data-i="newproject">Лоиҳаи нав</h1><div class="stephead"><span id="stepLabel">Қадам 1 / 10 · Маълумот</span><span id="stepPct">10%</span></div><div class="progress"><i id="bar"></i></div>
+<div id="stepContent" class="panel"></div>
+<div class="wizard-actions"><button class="btn secondary" id="prevStep" onclick="moveStep(-1)" data-i="back">Бозгашт</button><button class="btn" id="nextStep" onclick="moveStep(1)" data-i="next">Давом</button></div>
+</section>
+
+<section id="ai" class="screen">
+<div class="row" style="justify-content:space-between"><button class="btn ghost" onclick="show('home')">← Асосӣ</button><span class="tag">HASANEX AI</span></div>
+<h1>🤖 HASANEX AI AGENT TEAM</h1>
+<p class="sub">Як дархост — гурӯҳи агентҳо. Онҳо вазифаро тақсим мекунанд, HTML месозанд, натиҷаҳоро муқоиса мекунанд ва агенти роҳбар версияи ҷамъбастиро омода мекунад.</p>
+<div class="panel">
+<h3>1. Дастаи ИИ-ро интихоб кун</h3>
+<p class="muted">Режими Agent Team: ҳамаи ИИ-ҳои интихобшуда ҳамзамон кор мекунанд; баъд агенти роҳбар ҷавобҳоро ҷамъбаст карда, HTML-и ниҳоиро месозад. Барои API-и воқеии ҳар провайдер калиди алоҳида ё gateway-и дастрас лозим аст. Обунаи одии ChatGPT/Gemini/Kimi худ аз худ API key намедиҳад.</p>
+<div class="field"><label>Иҷрои ҷудогона: кадом ИИ?</label><select id="aiProvider" onchange="aiProviderChanged()"><option value="openai">OpenAI — GPT-5</option><option value="gemini">Google Gemini Cloud</option><option value="kimi">Moonshot — Kimi</option><option value="manus">Manus Agent</option><option value="claude">Anthropic — Claude</option><option value="custom">Дигар моделҳо — OpenAI-compatible</option></select></div>
+<div class="notice" id="aiProviderNote">GPT-5 тавассути OpenAI Responses API истифода мешавад.</div>
+<details class="ai-settings" open>
+<summary>⚙️ Танзими калидҳо ва моделҳо (ҳар ИИ — калиди алоҳида)</summary>
+<div class="ai-config-grid">
+ <div class="ai-model-card"><label class="ai-tick"><input type="checkbox" id="aiUse-openai" checked> OpenAI GPT-5</label><div class="field"><label>Модел</label><input id="aiModel-openai" value="gpt-5"></div><div class="field"><label>API key</label><input id="aiKey-openai" type="password" autocomplete="off" placeholder="OpenAI API key"></div><small class="help">Responses API · api.openai.com</small></div>
+ <div class="ai-model-card"><label class="ai-tick"><input type="checkbox" id="aiUse-gemini" checked> Gemini Cloud</label><div class="field"><label>Модел</label><input id="aiModel-gemini" value="gemini-3.8-flash"></div><div class="field"><label>API key</label><input id="aiKey-gemini" type="password" autocomplete="off" placeholder="Google AI API key"></div><small class="help">Gemini Interactions API · Google AI Studio key</small></div>
+ <div class="ai-model-card"><label class="ai-tick"><input type="checkbox" id="aiUse-kimi" checked> Kimi</label><div class="field"><label>Модел</label><input id="aiModel-kimi" value="kimi-k3"></div><div class="field"><label>API key</label><input id="aiKey-kimi" type="password" autocomplete="off" placeholder="Moonshot / Kimi API key"></div><small class="help">Moonshot Chat Completions API</small></div>
+ <div class="ai-model-card"><label class="ai-tick"><input type="checkbox" id="aiUse-manus" checked> Manus Agent</label><div class="field"><label>Режими агент</label><select id="aiModel-manus"><option value="standard">Standard</option><option value="lite">Lite</option><option value="max">Max</option><option value="max-high">Max High</option></select></div><div class="field"><label>API key</label><input id="aiKey-manus" type="password" autocomplete="off" placeholder="Manus API key"></div><small class="help">API v2 · вазифаро месозад ва натиҷаро месанҷад</small></div>
+ <div class="ai-model-card"><label class="ai-tick"><input type="checkbox" id="aiUse-claude"> Claude</label><div class="field"><label>Модел</label><input id="aiModel-claude" value="claude-sonnet-4-5"></div><div class="field"><label>API key</label><input id="aiKey-claude" type="password" autocomplete="off" placeholder="Anthropic API key"></div><small class="help">Anthropic Messages API</small></div>
+ <div class="ai-model-card"><label class="ai-tick"><input type="checkbox" id="aiUse-custom"> Дигар моделҳо</label><div class="field"><label>Endpoint</label><input id="aiEndpoint-custom" type="url" value="https://example.com/v1/chat/completions"></div><div class="field"><label>Модел</label><input id="aiModel-custom" value="model-name"></div><div class="field"><label>API key</label><input id="aiKey-custom" type="password" autocomplete="off" placeholder="API key"></div><small class="help">DeepSeek, Qwen ё дигар OpenAI-compatible API</small></div>
+</div>
+</details>
+<div class="notice">🔐 Калидҳо танҳо дар хотираи ҳамин саҳифаи браузер мемонанд; дар localStorage ё сервери HASANEX захира намешаванд. Онҳо мустақиман ба провайдери интихобшуда фиристода мешаванд. Иҷрои чанд модел метавонад аз ҳар провайдер маблағ ситонад. Баъзе API-ҳо CORS-ро аз браузер манъ мекунанд; дар ин ҳолат proxy-и амни серверӣ лозим аст. Калиди API-ро дар чат ё ба шахси дигар нафирист.</div>
+</div>
+<div class="panel">
+<h3>2. Тарзи кори ИИ-ро интихоб кун</h3>
+<div class="field"><label for="aiTaskMode">Вазифаи ИИ</label><select id="aiTaskMode"><option value="create">Сохтани барнома / сайт / бозӣ</option><option value="fix">Ислоҳи код ва хатогиҳо</option><option value="review">Санҷиш ва баррасии сифат</option><option value="design">Такмили дизайн ва UX</option><option value="explain">Фаҳмондани код</option><option value="translate">Тарҷумаи интерфейс</option><option value="optimize">Суръат ва оптимизатсия</option></select></div>
+<div class="notice" id="aiTaskHelp">ИИ талаботро мефаҳмад, сохтор месозад, HTML/CSS/JS менависад ва натиҷаро барои пешнамоиш медиҳад.</div>
+<div class="field"><label>Дархости ту</label><textarea id="aiPrompt" rows="5" placeholder="Масалан: Барои ман бозии мор соз, бо тугмаҳои телефон, хол ва тарҳи зебо..."></textarea></div>
+<div class="row"><button class="btn secondary" id="aiOfflineBtn" onclick="runOfflineHelper()">🆓 Ёрдамчии ройгон (бе API Key)</button><button class="btn" id="aiGenerateBtn" onclick="runAIProgrammer()">✨ Сохтан бо як ИИ</button><button class="btn secondary" id="aiTeamBtn" onclick="runAIAll(false)">🤝 Agent Team: ҳамкорӣ + ҷамъбаст</button><button class="btn ghost" onclick="runAIAll(true)">🛠 Agent Team: ислоҳ + санҷиш</button></div>
+<div id="aiStatus" class="muted" role="status" style="margin-top:12px">Ҳанӯз дархост фиристода нашудааст.</div><div id="aiMultiResults" class="ai-results" aria-live="polite"></div>
+</div>
+<div class="panel"><h3>3. Натиҷаи HTML</h3><div class="field"><textarea id="aiOutput" rows="14" spellcheck="false" placeholder="Коди сохташуда дар ин ҷо пайдо мешавад..."></textarea></div>
+<div class="row"><button class="btn" onclick="aiPreview()">👁 Пешнамоиш</button><button class="btn secondary" onclick="aiToEditor()">✏️ Кушодан дар муҳаррир</button><button class="btn ghost" onclick="aiDownloadHTML()">⬇ HTML</button><button class="btn" onclick="aiToAPK()">📦 Омода кардани APK / ZIP</button></div>
+<div class="preview" style="margin-top:14px"><iframe id="aiFrame" title="Пешнамоиши натиҷаи ИИ" sandbox="allow-scripts allow-forms allow-modals"></iframe></div>
+</div>
+</section>
+
+<section id="editor" class="screen"><div class="eyebrow">HTML WORKSPACE</div><h1 data-i="editorTitle">Муҳаррири HTML</h1><p class="sub" data-i="editorSub">Кодро таҳрир кун ва натиҷаро дар пешнамоиш бин.</p>
+<div class="field"><label data-i="htmlcode">HTML-код</label><textarea id="codeEditor" spellcheck="false"><!doctype html>
+<html lang="tg"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Барномаи ман</title><style>body{font-family:Arial;padding:25px;background:#f3f7fc;color:#17243a}button{padding:12px 18px;border:0;border-radius:10px;background:#168fe5;color:white}</style>
+<h1>Салом! 👋</h1><p>Ин намунаи веб-барномаи ман аст.</p><button onclick="alert('Кор мекунад!')">Санҷидан</button></html></textarea></div>
+<div class="row"><button class="btn" onclick="previewEditor()" data-i="preview">👁 Пешнамоиш</button><button class="btn secondary" onclick="useEditorCode()" data-i="usecode">Истифода дар лоиҳа</button><button class="btn ghost" onclick="downloadText('my-app.html',document.getElementById('codeEditor').value)" data-i="downloadhtml">⬇ HTML</button><button class="btn secondary" onclick="checkEditorHTML()">🧪 Санҷиши HTML</button></div>
+<div class="panel" id="editorDiagnostics" aria-live="polite"><h3>🧪 Санҷиши лоиҳа</h3><p class="muted" id="editorDiagnosticsText">HTML-ро санҷед: сохтори асосӣ, тегҳо, JavaScript ва истинодҳои файлҳои маҳаллӣ.</p></div>
+<div class="panel"><div class="row" style="justify-content:space-between"><h3 data-i="previewresult">Натиҷаи пешнамоиш</h3><div class="row"><button class="btn ghost" onclick="setEditorViewport('phone')">📱 Телефон</button><button class="btn ghost" onclick="setEditorViewport('tablet')">▣ Планшет</button><button class="btn ghost" onclick="setEditorViewport('desktop')">💻 Компютер</button></div></div><div class="preview" id="editorPreviewBox"><iframe id="editorFrame" sandbox="allow-scripts allow-forms allow-modals"></iframe></div><small id="editorDraftStatus" class="muted">Захиракунии худкор фаъол аст.</small></div>
+</section>
+
+<section id="projects" class="screen"><div class="eyebrow">WORKSPACE</div><h1 data-i="myprojects">Лоиҳаҳои ман</h1><p class="sub" data-i="projectsub">Лоиҳаҳоро дар ҳамин дастгоҳ захира кун ё боз ворид намо.</p>
+<div class="row"><button class="btn" onclick="startWizard('advanced')" data-i="newprojectbtn">＋ Лоиҳаи нав</button><button class="btn secondary" onclick="document.getElementById('projectImport').click()" data-i="importproject">Ворид кардани JSON</button><button class="btn ghost" onclick="backupAllProjects()">⬇ Нусхаи ҳамаи лоиҳаҳо</button></div>
+<div id="projectList"></div><input id="projectImport" type="file" accept=".json,application/json" hidden onchange="importProject(event)">
+</section>
+
+<section id="help" class="screen"><div class="eyebrow">HOW IT WORKS</div><h1 data-i="guideTitle">Чӣ тавр APK сохтан мумкин?</h1><p class="sub" data-i="guideSub">Ин барнома файлҳои лоиҳаро омода мекунад. APK дар GitHub Actions сохта мешавад.</p>
+
+<div class="guide-lang" data-guide-lang="tg">
+  <div class="panel"><h3>Асбобҳои ройгон</h3><p class="muted">Нишона ва PNG, экрани оғоз, режими Desktop, фаъол нигоҳ доштани экран, ворид кардани папкаи сайт, пешнамоиш, санҷиши роҳҳои CSS/JS/расмҳо, хориҷ кардани файлҳои нолозим ва ZIP-и Android.</p></div>
+  <div class="panel"><h3>1. HTML ва файлҳоро интихоб кун</h3><p class="muted">index.html, CSS, JavaScript, расмҳо ва дигар файлҳои сайтро илова кун. Агар сайт аз якчанд файл иборат бошад, папкаи пурраро интихоб кун.</p></div>
+  <div class="panel"><h3>2. Танзимотро пур кун</h3><p class="muted">Номи барнома, Package ID, ранг, нишона, иҷозатҳои зарурӣ ва рафтори WebView-ро интихоб кун.</p></div>
+  <div class="panel"><h3>Пеш аз сохтмон</h3><p class="muted">Дар қадами «Интегратсия» тугмаи «Санҷидани сайт ва файлҳо»-ро пахш кун. Барнома саҳифаи оғоз, истинодҳои маҳаллӣ, файлҳои гумшуда ва ҳаҷми умумиро месанҷад. Ин санҷиш хатогиҳои маъмулро меёбад, аммо ҷойгузини санҷиши APK-и воқеӣ нест.</p></div>
+  <div class="panel"><h3>3. APK-ро бе GitHub дар телефон соз</h3><p class="muted">Дар қадами охир суроғаи HTTPS-и APK-серверро ворид кун ва «СОХТАНИ APK»-ро пахш намо. Сервер файлҳои сайтро қабул карда, APK месозад ва мустақим бармегардонад. Барои кори воқеӣ сервер бояд пешакӣ дар VPS/Docker ҷойгир шуда бошад.</p></div>
+  <div class="panel"><h3>4. APK-и тайёрро насб кун</h3><p class="muted">Пас аз сохтмон APK дар app/build/outputs/apk/debug/app-debug.apk пайдо мешавад. Тугмаи Install-и IDE-ро қабул кун ё APK-ро аз ҳамин ҷузвдон кушо. Ин Debug APK барои санҷиш аст; барои Google Play имзои Release лозим мешавад.</p></div>
+  <div class="panel"><h3>5. Чӣ тавр барномаро ба Google Play гузорам?</h3><p class="muted">Барои нашри оммавӣ ҳисоби Google Play Console лозим аст. Сабти номи таҳиягар одатан 25 доллари ИМА — як маротиба аст; соҳиби ҳисоб бояд ҳадди ақал 18-сола бошад ва санҷиши шахсиятро гузарад.</p><ol class="muted"><li>Ба <b>Play Console</b> даро ва ҳисоби Developer соз.</li><li><b>Create app</b>-ро пахш кун; ном, забон, App/Game, Free/Paid ва Package ID-ро ворид кун. Package ID бояд беназир бошад ва баъд аз нашр иваз намешавад.</li><li>Маълумоти саҳифаи мағоза пур кун: тавсиф, нишона, скриншотҳо, категория, email ва сиёсати махфият. Саволҳои App content, Data safety, Ads ва Content rating-ро рост пур кун.</li><li>Барои нашри нав одатан файли <b>Android App Bundle (.aab)</b> лозим аст, на Debug APK. Release бояд бо калиди upload имзо шавад; Play App Signing-ро фаъол кун. Калиди махфиро ба касе нафирист ва дар GitHub ҳамчун матни оддӣ нагузор.</li><li>Аввал Internal testing ё Closed testing-ро истифода кун. Агар ҳисоби шахсии ту баъд аз 13 ноябри 2023 сохта шуда бошад, барои дархости Production одатан ҳадди ақал 12 tester бояд 14 рӯзи пайваста дар Closed test иштирок кунанд.</li><li>Пас аз пур кардани ҳамаи талабот, <b>Production → Create new release</b>-ро интихоб кун, AAB-ро бор кун, тафсилотро санҷ ва барои баррасии Google фирист.</li></ol><p class="muted"><b>Муҳим:</b> HASANEX 14.1 метавонад тавассути APK-сервери шумо Debug APK созад. Барои ин сервер бояд алоҳида ҷойгир ва ба барнома пайваст карда шавад. Барои Google Play сохтани Release/AAB ва имзои бехатар ҳанӯз лозим аст.</p></div>
+</div>
+<div class="guide-lang" data-guide-lang="ru">
+  <div class="panel"><h3>Бесплатные инструменты</h3><p class="muted">Иконка и PNG, экран запуска, режим Desktop, предотвращение выключения экрана, импорт папки сайта, предпросмотр, проверка путей CSS/JS/изображений, удаление ненужных файлов и Android ZIP.</p></div>
+  <div class="panel"><h3>1. Выберите HTML и файлы</h3><p class="muted">Добавьте index.html, CSS, JavaScript, изображения и другие файлы сайта. Если сайт состоит из нескольких файлов, выберите всю папку.</p></div>
+  <div class="panel"><h3>2. Заполните настройки</h3><p class="muted">Укажите название приложения, Package ID, цвет, иконку, необходимые разрешения и поведение WebView.</p></div>
+  <div class="panel"><h3>Перед сборкой</h3><p class="muted">На шаге «Интеграция» нажмите «Проверить сайт и файлы». Приложение проверит стартовую страницу, локальные ссылки, отсутствующие файлы и общий размер. Проверка помогает найти распространённые ошибки, но не заменяет тестирование готового APK.</p></div>
+  <div class="panel"><h3>3. Соберите APK на телефоне без GitHub</h3><p class="muted">На последнем шаге укажите HTTPS-адрес APK-сервера и нажмите «СОЗДАТЬ APK». Сервер получит файлы сайта, соберёт APK и вернёт его напрямую. Для работы сервер нужно заранее развернуть на VPS/Docker.</p></div>
+  <div class="panel"><h3>4. Установите готовый APK</h3><p class="muted">После сборки APK появится в app/build/outputs/apk/debug/app-debug.apk. Примите предложение Install в IDE или откройте APK из этой папки. Это Debug APK для тестирования; для Google Play нужна Release-подпись.</p></div>
+  <div class="panel"><h3>5. Как опубликовать приложение в Google Play?</h3><p class="muted">Для публичной публикации нужен аккаунт Google Play Console. Регистрация разработчика обычно стоит 25 долларов США один раз; владельцу аккаунта должно быть не менее 18 лет, также требуется проверка личности.</p><ol class="muted"><li>Откройте <b>Play Console</b> и зарегистрируйте аккаунт разработчика.</li><li>Нажмите <b>Create app</b>; укажите название, язык, тип App/Game, Free/Paid и Package ID. Package ID должен быть уникальным и не меняется после публикации.</li><li>Заполните страницу магазина: описание, иконку, скриншоты, категорию, email и политику конфиденциальности. Правдиво заполните разделы App content, Data safety, Ads и Content rating.</li><li>Для новой публикации обычно нужен <b>Android App Bundle (.aab)</b>, а не Debug APK. Release подписывается upload-ключом; включите Play App Signing. Не передавайте секретный ключ другим и не храните его в открытом виде на GitHub.</li><li>Сначала используйте Internal testing или Closed testing. Если личный аккаунт создан после 13 ноября 2023 года, для запроса Production обычно нужны минимум 12 тестировщиков, участвующих в закрытом тесте непрерывно 14 дней.</li><li>После выполнения требований выберите <b>Production → Create new release</b>, загрузите AAB, проверьте данные и отправьте приложение Google на проверку.</li></ol><p class="muted"><b>Важно:</b> HASANEX 14.1 может собирать Debug APK через ваш APK-сервер. Сервер нужно отдельно развернуть и подключить к приложению. Для Google Play по-прежнему нужны Release/AAB и безопасная подпись.</p></div>
+</div>
+<div class="guide-lang" data-guide-lang="en">
+  <div class="panel"><h3>Free tools</h3><p class="muted">App icon and PNG, splash screen, Desktop mode, keep-screen-on option, website-folder import, preview, CSS/JS/image path checks, removal of unnecessary files, and Android ZIP export.</p></div>
+  <div class="panel"><h3>1. Choose your HTML and files</h3><p class="muted">Add index.html, CSS, JavaScript, images, and other website files. If your site contains multiple files, select the entire folder.</p></div>
+  <div class="panel"><h3>2. Configure the app</h3><p class="muted">Set the app name, Package ID, color, icon, required permissions, and WebView behavior.</p></div>
+  <div class="panel"><h3>Before building</h3><p class="muted">On the “Integration” step, tap “Check website and files”. The app checks the start page, local links, missing files, and total size. This helps find common issues, but it does not replace testing the actual APK.</p></div>
+  <div class="panel"><h3>3. Build the APK on your phone without GitHub</h3><p class="muted">On the final step, enter your APK server HTTPS URL and tap “BUILD APK”. The server receives the website files, compiles the APK, and returns it directly. The server must first be deployed on a VPS/Docker host.</p></div>
+  <div class="panel"><h3>4. Install the generated APK</h3><p class="muted">After the build, the APK is at app/build/outputs/apk/debug/app-debug.apk. Accept the IDE’s Install prompt or open the APK from that folder. This is a Debug APK for testing; Google Play requires release signing.</p></div>
+  <div class="panel"><h3>5. How do I publish my app on Google Play?</h3><p class="muted">Public publishing requires a Google Play Console developer account. Registration is usually a one-time US$25 fee; the account owner must be at least 18 and complete identity verification.</p><ol class="muted"><li>Open <b>Play Console</b> and register a developer account.</li><li>Choose <b>Create app</b>; enter the app name, default language, App/Game type, Free/Paid status, and Package ID. The Package ID must be unique and cannot be changed after publication.</li><li>Complete the store listing: description, icon, screenshots, category, contact email, and privacy policy. Answer App content, Data safety, Ads, and Content rating questions accurately.</li><li>New app releases generally require an <b>Android App Bundle (.aab)</b>, not a Debug APK. Sign the release with an upload key and enable Play App Signing. Never share your private key or store it as plain text in GitHub.</li><li>Start with Internal testing or Closed testing. If your personal developer account was created after November 13, 2023, you generally need at least 12 testers opted into a closed test continuously for 14 days before requesting Production access.</li><li>When all requirements are complete, choose <b>Production → Create new release</b>, upload the AAB, review the details, and submit the app to Google for review.</li></ol><p class="muted"><b>Important:</b> HASANEX 14.1 can build a Debug APK through your APK server. The server must be deployed separately and connected to the app. Google Play still requires a Release/AAB build and secure signing.</p></div>
+</div>
+<div class="notice">
+<div class="guide-lang" data-guide-lang="tg">Муҳим: APK дар сервери Android/Gradle сохта мешавад. Барои истифода серверро ҷойгир кун ва суроғаи HTTPS-и онро дар қадами охир ворид намо.</div>
+<div class="guide-lang" data-guide-lang="ru">Важно: APK собирается на сервере Android/Gradle. Сначала разверните сервер и укажите его HTTPS-адрес на последнем шаге.</div>
+<div class="guide-lang" data-guide-lang="en">Important: the APK is compiled on an Android/Gradle build server. Deploy the server first, then enter its HTTPS URL on the final step.</div>
+<div class="panel"><h3>🔐 HASANEX · Муҳофизати барнома</h3><p class="muted">Муҳофизати зидди нусхабардории оддӣ фаъол аст: интихоби матни интерфейс, менюи контекстӣ ва баъзе миёнабурҳои нусхабардорӣ маҳдуд карда мешаванд. Муҳаррири HTML ва майдонҳои воридкунӣ барои кори муқаррарӣ озод мемонанд.</p><p class="muted"><b>Муҳим:</b> ин муҳофизат танҳо монеаи оддӣ аст. HTML ва JavaScript-и дар браузер иҷрошаванда пурра махфӣ шуда наметавонанд; шахси техникӣ метавонад онҳоро аз манбаи саҳифа ё DevTools бинад. Барои муҳофизати воқеии калидҳо ва API онҳо бояд танҳо дар сервер нигоҳ дошта шаванд.</p></div>
+<div class="panel" style="display:flex;align-items:center;gap:12px"><div class="logo" style="flex:0 0 44px;width:44px;height:44px">H</div><div><b>HTML to APK</b><div class="muted">A product by HASANEX · Version 14.1</div></div></div>
+<div class="support-card" id="supportCard">
+  <div class="support-lang active" data-support-lang="tg">
+    <h3>💜 Салом! Як хоҳиши хурд</h3>
+    <p>Ин барнома барои ҳама ройгон сохта шудааст — бе обуна ва бе пардохт. Агар барнома ба шумо писанд омад, хоҳиш мекунем онро ба дӯстону шиносонатон тавсия диҳед ва саҳифаи моро дар Instagram ё TikTok пайгирӣ кунед.</p>
+    <p>Бо дастгирии шумо мо метавонем лоиҳаро беҳтар кунем ва хусусиятҳои нав илова намоем.</p>
+    <p class="support-thanks">🙏 Ташаккур барои таваҷҷуҳ ва дастгириатон!</p>
+  </div>
+  <div class="support-lang" data-support-lang="ru">
+    <h3>💜 Привет! Небольшая просьба</h3>
+    <p>Это приложение создано для всех бесплатно — без подписки и оплаты. Если оно вам понравилось, порекомендуйте его друзьям и знакомым и подпишитесь на наши страницы в Instagram или TikTok.</p>
+    <p>Ваша поддержка поможет нам развивать проект и добавлять новые возможности.</p>
+    <p class="support-thanks">🙏 Спасибо за внимание и поддержку!</p>
+  </div>
+  <div class="support-lang" data-support-lang="en">
+    <h3>💜 Hello! A small request</h3>
+    <p>This app is free for everyone — no subscription or payment required. If you like it, please recommend it to your friends and follow our pages on Instagram or TikTok.</p>
+    <p>Your support helps us improve the project and add new features.</p>
+    <p class="support-thanks">🙏 Thank you for your attention and support!</p>
+  </div>
+  <div class="support-links">
+    <a href="https://www.instagram.com/pragramist._tjk/" target="_blank" rel="noopener noreferrer">📸 Instagram · @pragramist._tjk</a>
+    <a class="tiktok" href="https://www.tiktok.com/@pragramist._tjk" target="_blank" rel="noopener noreferrer">♪ TikTok · @pragramist._tjk</a>
+  </div>
+</div>
+<div class="panel" style="border-color:#6552a5;background:linear-gradient(135deg,#211b3b,#121925)">
+  <div class="guide-lang" data-guide-lang="tg"><h3>💜 Паёми таҳиягар</h3><p class="muted">Ташаккур, ки HASANEX-ро истифода мебаред. Умедворем ин барнома сохтани барномаҳои Android-ро барои шумо осон мекунад. Мо барои беҳтар кардани он кӯшиш мекунем.</p><p class="support-thanks">Ташаккур барои истифодаи HASANEX! 🙏</p></div>
+  <div class="guide-lang" data-guide-lang="ru"><h3>💜 Сообщение разработчика</h3><p class="muted">Спасибо, что используете HASANEX. Надеемся, приложение поможет вам проще создавать Android-приложения. Мы продолжаем работать над его улучшением.</p><p class="support-thanks">Спасибо за использование HASANEX! 🙏</p></div>
+  <div class="guide-lang" data-guide-lang="en"><h3>💜 Developer's message</h3><p class="muted">Thank you for using HASANEX. We hope this app makes creating Android apps easier. We will keep working to improve it.</p><p class="support-thanks">Thank you for using HASANEX! 🙏</p></div>
+</div>
+</div>
+</section>
+
+<section id="pdf" class="screen"><div class="eyebrow">DOCUMENT VIEWER</div><h1 data-i="pdfTitle">PDF Viewer</h1><p class="sub" data-i="pdfSub">Файли PDF-и худро интихоб кун.</p><div class="filebox" onclick="document.getElementById('pdfInput').click()">📕<strong data-i="choosepdf">Интихоби PDF</strong><span class="muted">PDF</span></div><div id="pdfName" class="muted" style="margin:10px 0"></div><div class="preview"><iframe id="pdfFrame" title="PDF preview"></iframe></div></section>
+</main>
+<nav class="bottom"><div class="bottom-inner nav-three"><button class="tab active" data-screen="home" onclick="show('home')"><span>⌂</span><b data-i="home">Асосӣ</b></button><button class="tab" data-screen="projects" onclick="show('projects')"><span>▣</span><b data-i="projects">Лоиҳаҳо</b></button><button class="tab" data-screen="help" onclick="show('help')"><span>☷</span><b data-i="guide">Роҳнамо</b></button></div></nav>
+<input id="htmlInput" type="file" accept=".html,.htm,text/html" hidden>
+<input id="folderInput" type="file" webkitdirectory directory multiple hidden>
+<input id="extraInput" type="file" multiple hidden>
+<input id="pdfInput" type="file" accept="application/pdf,.pdf" hidden>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const dict={
+tg:{protectIntro:"Муҳофизати иловагӣ аз нусхабардории тасодуфӣ фаъол аст.",welcome:"Сохтани барнома осонтар шуд.",intro:"HTML ё сайти худро интихоб кун, танзимотро пур кун ва лоиҳаи Android гир. APK-ро дар худи телефон бо муҳити маҳаллӣ бисоз — бе аккаунти GitHub.",buildNotice:"Муҳим: HASANEX лоиҳаи Gradle месозад, аммо браузер APK-ро намесозад. Барои сохтани APK бе GitHub Code on the Go-ро насб кун, лоиҳаро дар он кушо ва Build-ро пахш кун.",create:"Оғози кор",quick:"Сохтани зуд",quickd:"HTML-ро интихоб кун ва бо танзимоти асосӣ оғоз намо.",advanced:"Сохтани пешрафта",advd:"10 қадам: файлҳо, дизайн, иҷозатҳо ва WebView.",editor:"Муҳаррири HTML",editd:"Кодро навис, тағйир деҳ ва пешнамоиш кун.",projects:"Лоиҳаҳои ман",projectd:"Лоиҳаҳои захирашуда ва файлҳои охирин.",pdf:"Кушодани PDF",pdfd:"Файли PDF-ро интихоб карда бин.",guide:"Роҳнамо",guided:"Қадам ба қадам то гирифтани APK.",recent:"Лоиҳаи охирин",all:"Ҳама",backHome:"Асосӣ",newproject:"Лоиҳаи нав",back:"Бозгашт",next:"Давом",editorTitle:"Муҳаррири HTML",editorSub:"Кодро таҳрир кун ва натиҷаро дар пешнамоиш бин.",htmlcode:"HTML-код",preview:"👁 Пешнамоиш",usecode:"Истифода дар лоиҳа",downloadhtml:"⬇ HTML",previewresult:"Натиҷаи пешнамоиш",myprojects:"Лоиҳаҳои ман",projectsub:"Лоиҳаҳоро дар ҳамин дастгоҳ захира кун ё боз ворид намо.",newprojectbtn:"＋ Лоиҳаи нав",importproject:"Ворид кардани JSON",guideTitle:"Чӣ тавр APK сохтан мумкин?",guideSub:"HASANEX лоиҳаи Android месозад; APK-ро дар телефони худ бо Code on the Go компиляция кун.",pdfTitle:"PDF Viewer",pdfSub:"Файли PDF-и худро интихоб кун.",choosepdf:"Интихоби PDF",home:"Асосӣ",tools:"Асбобҳо",homeCard:"Сохтани барнома",homeCardDesc:"HTML ё папкаи сайтро интихоб карда, лоиҳаи Android барои сохтани APK дар телефон омода кун.",editorCard:"Муҳаррири HTML",editorCardDesc:"Кодро таҳрир кун ва пешнамоишро бин.",pdfCard:"Кушодани PDF",pdfCardDesc:"Ҳуҷҷати PDF-ро бин.",noRecent:"Ҳоло лоиҳа захира нашудааст.",helpTools:"Асбобҳои ройгон",helpFiles:"1. HTML ва файлҳоро интихоб кун"},
+ru:{protectIntro:"Дополнительная защита от случайного копирования включена.",welcome:"Создавать приложения стало проще.",intro:"Выберите HTML или сайт и подготовьте Android-проект. Соберите APK прямо на телефоне — без аккаунта GitHub.",buildNotice:"Важно: HASANEX создаёт Gradle-проект, но браузер не компилирует APK. Для сборки APK без GitHub установите Code on the Go, откройте проект и нажмите Build.",create:"Начать",quick:"Быстрая сборка",quickd:"Выберите HTML и начните с основных настроек.",advanced:"Расширенная сборка",advd:"10 шагов: файлы, дизайн, разрешения и WebView.",editor:"HTML-редактор",editd:"Пишите и редактируйте код с предпросмотром.",projects:"Мои проекты",projectd:"Сохранённые проекты и последние файлы.",pdf:"Открыть PDF",pdfd:"Выберите PDF-файл для просмотра.",guide:"Инструкция",guided:"Пошаговый путь к APK.",recent:"Последний проект",all:"Все",backHome:"Главная",newproject:"Новый проект",back:"Назад",next:"Далее",editorTitle:"HTML-редактор",editorSub:"Измените код и посмотрите результат.",htmlcode:"HTML-код",preview:"👁 Предпросмотр",usecode:"Использовать в проекте",downloadhtml:"⬇ HTML",previewresult:"Результат",myprojects:"Мои проекты",projectsub:"Сохраняйте проекты на устройстве или импортируйте их.",newprojectbtn:"＋ Новый проект",importproject:"Импорт JSON",guideTitle:"Как собрать APK?",guideSub:"HASANEX готовит Android-проект; Code on the Go компилирует APK на телефоне.",pdfTitle:"Просмотр PDF",pdfSub:"Выберите PDF-файл.",choosepdf:"Выбрать PDF",home:"Главная",tools:"Инструменты",homeCard:"Создать приложение",homeCardDesc:"Выберите HTML или папку сайта и подготовьте проект для сборки APK на телефоне.",editorCard:"HTML-редактор",editorCardDesc:"Редактируйте код и смотрите предпросмотр.",pdfCard:"Открыть PDF",pdfCardDesc:"Просмотрите PDF-документ.",noRecent:"Пока нет сохранённых проектов.",helpTools:"Бесплатные инструменты",helpFiles:"1. Выберите HTML и файлы"},
+en:{protectIntro:"Extra protection against casual copying is enabled.",welcome:"App building, made simpler.",intro:"Choose your HTML or website and prepare an Android project. Build the APK on your phone with a local build environment — no GitHub account required.",buildNotice:"Important: HASANEX creates a Gradle project, but the browser does not compile APKs. To build without GitHub, install Code on the Go, open the project, and tap Build.",create:"Get started",quick:"Quick build",quickd:"Choose HTML and start with essential settings.",advanced:"Advanced build",advd:"10 steps: files, design, permissions and WebView.",editor:"HTML editor",editd:"Write and edit code with live preview.",projects:"My projects",projectd:"Saved projects and recent files.",pdf:"Open PDF",pdfd:"Choose a PDF file to view.",guide:"Guide",guided:"Step-by-step path to your APK.",recent:"Recent project",all:"All",backHome:"Home",newproject:"New project",back:"Back",next:"Next",editorTitle:"HTML editor",editorSub:"Edit code and preview the result.",htmlcode:"HTML code",preview:"👁 Preview",usecode:"Use in project",downloadhtml:"⬇ HTML",previewresult:"Preview result",myprojects:"My projects",projectsub:"Save projects on this device or import them.",newprojectbtn:"＋ New project",importproject:"Import JSON",guideTitle:"How to build an APK",guideSub:"HASANEX prepares the Android project; Code on the Go compiles the APK on your phone.",pdfTitle:"PDF viewer",pdfSub:"Choose your PDF file.",choosepdf:"Choose PDF",home:"Home",tools:"Tools",homeCard:"Build an app",homeCardDesc:"Choose HTML or a website folder and prepare a project for on-device APK building.",editorCard:"HTML editor",editorCardDesc:"Edit your code and preview the result.",pdfCard:"Open PDF",pdfCardDesc:"View a PDF document.",noRecent:"No projects saved yet.",helpTools:"Free tools",helpFiles:"1. Choose HTML and files"}
+};
+let lang=(()=>{try{const v=localStorage.getItem('hasanex-language');return ['tg','ru','en'].includes(v)?v:'tg'}catch(e){return 'tg'}})(),step=0,mode='advanced',project={},selectedFiles=[],htmlText='',pdfUrl='';
+
+const uiWords={
+  tg:{
+    'Open external links':'Кушодани истинодҳои беруна',
+    'Open links outside the app in browser.':'Истинодҳоро берун аз барнома дар браузер кушо.',
+    'Allow JavaScript inside your website.':'Иҷозати JavaScript дар дохили сайт.',
+    'Local storage and website settings.':'Захираи маҳаллӣ ва танзимоти сайт.',
+    'Allow pinch-to-zoom.':'Иҷозати калон ё хурд кардани саҳифа бо ду ангушт.',
+    'Loading…':'Бор шуда истодааст…',
+    'Ready. Waiting for build ZIP…':'Омода. Интизори сохтани ZIP…',
+    'Application ID':'ID-и барнома',
+    'Fullscreen':'Экрани пурра',
+    'Automatic':'Худкор',
+    'Dark':'Торик',
+    'Light':'Равшан',
+    'Portrait':'Амудӣ',
+    'Landscape':'Уфуқӣ',
+    'Build type':'Навъи сохтан',
+    'Debug APK (for testing)':'Debug APK (барои санҷиш)',
+    'Release APK — signing key required (not available yet)':'Release APK — калиди имзо лозим аст (ҳоло дастрас нест)',
+    'Start page':'Саҳифаи оғоз',
+    'Search website and files':'Ҷустуҷӯи сайт ва файлҳо',
+    'Scan website and files':'Санҷидани сайт ва файлҳо',
+    'Before creating APK, scan your site.':'Пеш аз сохтани APK сайти худро санҷ.',
+    'Open PDF':'Кушодани PDF',
+    'Share':'Мубодила',
+    'Cancel':'Бекор кардан',
+    'Continue':'Давом',
+    'Save':'Захира кардан',
+    'Download':'Зеркашӣ',
+    'Choose file':'Интихоби файл',
+    'No file selected':'Ягон файл интихоб нашудааст.'
+  },
+  ru:{
+    'Асосӣ':'Главная','Лоиҳаҳо':'Проекты','Роҳнамо':'Инструкция','Муҳаррири HTML':'HTML-редактор',
+    'Кушодани PDF':'Открыть PDF','Лоиҳаи охирин':'Последний проект','Ҳоло лоиҳа захира нашудааст.':'Пока нет сохранённых проектов.',
+    'Асбобҳои ройгон':'Бесплатные инструменты','1. HTML ва файлҳоро интихоб кун':'1. Выберите HTML и файлы',
+    'Нишона ва PNG, заставка, режими Desktop, фаъол нигоҳ доштани экран, ворид кардани папкаи сайт, пешнамоиш, санҷиши роҳҳои CSS/JS/расмҳо, хориҷ кардани файлҳои нолозим ва ZIP-и Android.':'Иконка и PNG, экран заставки, режим рабочего стола, запрет выключения экрана, импорт папки сайта, предпросмотр, проверка путей CSS/JS/изображений, удаление ненужных файлов и Android ZIP.',
+    'index.html, CSS, JavaScript, расмҳо ва дигар файлҳои сайтро илова кун. Агар сайт якчанд файл дошта бошад, папкаи пурраро интихоб кун.':'Добавьте index.html, CSS, JavaScript, изображения и другие файлы сайта. Если сайт состоит из нескольких файлов, выберите всю папку.',
+    '2. Танзимотро пур кун':'2. Заполните настройки',
+    'Номи барнома, package ID, ранг, нишона, иҷозатҳои лозим ва рафтори WebView-ро интихоб кун.':'Укажите название приложения, package ID, цвет, значок, необходимые разрешения и параметры WebView.',
+    'Пеш аз сохтмон':'Перед сборкой',
+    'Дар қадами «Интегратсия» тугмаи «Санҷидани сайт ва файлҳо»-ро пахш кун. Барнома саҳифаи оғоз, истинодҳои маҳаллӣ, файлҳои гумшуда ва ҳаҷми умумиро месанҷад. Ин санҷиш хатогиҳои маъмулро меёбад, аммо ҷойгузини санҷиши APK-и воқеӣ нест.':'На шаге «Интеграция» нажмите «Проверить сайт и файлы». Приложение проверит стартовую страницу, локальные ссылки, отсутствующие файлы и общий размер. Проверка находит распространённые ошибки, но не заменяет тестирование готового APK.',
+    '3. ZIP-и Android-ро гир':'3. Получите Android ZIP',
+    'Дар охири қадамҳо тугмаи «Сохтани Android ZIP»-ро пахш кун. ZIP дорои Android Studio project ва workflow мебошад.':'В конце нажмите «Создать Android ZIP». Архив содержит проект Android Studio и workflow для сборки.',
+    '4. APK-ро дар телефон насб кун':'4. Установите APK на телефон',
+    'Дар GitHub → Actions → Build APK → Run workflow. Пас аз сабз шудани Build, Artifacts-ро зеркашӣ кун (он ZIP аст; дар дохилаш APK мебошад). ZIP-и Artifacts-ро кушо, файли .apk-ро интихоб кун ва Install-ро пахш намо. Агар Android иҷозат пурсад, барои браузер ё Files иҷозати Install unknown apps-ро фаъол кун.':'Откройте GitHub → Actions → Build APK → Run workflow. После успешной сборки скачайте Artifacts (это ZIP-архив с APK). Распакуйте архив, выберите файл .apk и нажмите Install. Если Android запросит разрешение, включите для браузера или Files параметр «Установка неизвестных приложений».',
+    'Муҳим: ин версия APK-ро мустақиман дар браузер намесозад. Браузер ZIP-и лоиҳаро месозад. GitHub Actions APK-ро дар сервер сохта, файли .apk-ро ба Releases мегузорад.':'Важно: эта версия не собирает APK непосредственно в браузере. Для сборки требуется Android SDK; GitHub Actions выполняет эту работу на сервере.',
+    'Маълумоти барнома':'Основная информация','Номи барнома':'Название приложения','Манбаи контент':'Источник контента',
+    'Навъи манбаъ':'Тип источника','Интихоби HTML-файл':'Выбрать HTML-файл','Интихоби папкаи сайт':'Выбрать папку сайта',
+    'Иловаи файлҳо':'Добавить файлы','Пешнамоиш':'Предпросмотр','Таҳрири HTML':'Редактировать HTML',
+    'Саҳифаи оғоз':'Стартовая страница','Мавзӯи сайт':'Тема сайта','Ранги асосӣ':'Основной цвет',
+    'Самти экран':'Ориентация экрана','Пинҳон кардани панелҳои система':'Скрыть системные панели',
+    'Иҷозатҳои Android':'Разрешения Android','Танҳо иҷозатҳоеро интихоб кун, ки сайт воқеан истифода мебарад.':'Выбирайте только те разрешения, которые действительно нужны сайту.',
+    'Нишонаи барнома':'Значок приложения','Интихоби нишона':'Выбрать значок','Бор кардани PNG':'Загрузить PNG',
+    'Экран оғоз':'Экран заставки','Фаъол кардани заставка':'Включить заставку','Матни заставка':'Текст заставки',
+    'Экран хомӯш нашавад':'Не выключать экран','Зеркашии файлҳо':'Загрузка файлов','Режими Desktop':'Режим рабочего стола',
+    'Пайвастшавӣ бо Android':'Интеграция с Android','Санҷидани сайт ва файлҳо':'Проверить сайт и файлы',
+    'Танзимоти сохтани APK':'Настройки сборки APK','Санҷиши лоиҳа':'Проверка проекта',
+    'Захира кардани лоиҳа':'Сохранить проект','Файлҳо ҳоло интихоб нашудаанд.':'Файлы ещё не выбраны.',
+    'Номи барнома ва Package ID бояд дуруст бошанд. Package ID баъд аз нашр иваз карданаш душвор мешавад.':'Название приложения и Package ID должны быть корректными. После публикации изменить Package ID будет сложно.',
+    'Барои нигоҳ доштани CSS, JavaScript, расмҳо ва видеоҳо папкаи пурраи сайтро интихоб кун. Сохтори дохилии папка нигоҳ дошта мешавад.':'Чтобы сохранить CSS, JavaScript, изображения и видео, выберите всю папку сайта. Структура папок будет сохранена.',
+    'Ин интихоб танҳо permission-ро ба AndroidManifest илова мекунад. Дархости иҷозати runtime барои камера, микрофон ва GPS ҳанӯз пурра пайваст нашудааст; ин функсияҳоро фаъол ҳисоб накун.':'Этот выбор только добавляет разрешения в AndroidManifest. Запрос runtime-разрешений для камеры, микрофона и GPS ещё не подключён полностью; не считайте эти функции готовыми.',
+    'Муҳофизати файлҳо фаъол':'Защита файлов включена','Файлҳои дохилӣ тавассути AndroidX WebViewAssetLoader кушода мешаванд; дастрасии озоди file:// баста аст.':'Локальные файлы открываются через AndroidX WebViewAssetLoader; прямой доступ file:// отключён.',
+    'Истинодҳои беруна метавонанд дар браузери телефон кушода шаванд. PDF ва Share ҳоло ба APK дохил намешаванд.':'Внешние ссылки могут открываться в браузере телефона. PDF и Share пока не включены в APK.',
+    'Файлҳои сайтро ба Downloads нигоҳ медорад.':'Сохраняет файлы сайта в Downloads.',
+    'Ҳангоми истифодаи барнома экран фаъол мемонад.':'Экран остаётся включённым во время работы приложения.',
+    'Сайтро бо User-Agent-и браузери компютер мекушояд.':'Открывает сайт с User-Agent настольного браузера.',
+    'Масалан: index.html ё pages/home.html.':'Например: index.html или pages/home.html.',
+    'Пеш аз сохтани APK сайтро санҷ.':'Проверьте сайт перед сборкой APK.',
+    'Ин версия Debug APK-и имзошудаи санҷишӣ месозад ва онро ҳамчун файли .apk дар GitHub Releases мегузорад. Барои Google Play калиди имзои шахсӣ ва танзимоти Release лозиманд.':'Эта версия создаёт Debug APK для тестовой установки. Для публикации в Play Store потребуется личный ключ подписи и безопасная конфигурация.',
+    'Лоиҳа ба ZIP-и Android Studio омода мешавад. APK танҳо баъд аз иҷрои GitHub Actions сохта мешавад.':'Проект будет упакован в ZIP для Android Studio. APK будет создан только после запуска GitHub Actions.',
+    'Файли PDF-и худро интихоб кун.':'Выберите PDF-файл.'
+  },
+  en:{
+    'Асосӣ':'Home','Лоиҳаҳо':'Projects','Роҳнамо':'Guide','Муҳаррири HTML':'HTML editor',
+    'Кушодани PDF':'Open PDF','Лоиҳаи охирин':'Recent project','Ҳоло лоиҳа захира нашудааст.':'No projects saved yet.',
+    'Асбобҳои ройгон':'Free tools','1. HTML ва файлҳоро интихоб кун':'1. Choose HTML and files',
+    'Нишона ва PNG, заставка, режими Desktop, фаъол нигоҳ доштани экран, ворид кардани папкаи сайт, пешнамоиш, санҷиши роҳҳои CSS/JS/расмҳо, хориҷ кардани файлҳои нолозим ва ZIP-и Android.':'App icon and PNG, splash screen, desktop mode, keep screen awake, import a website folder, preview, check CSS/JS/image paths, remove unnecessary files, and create an Android ZIP.',
+    'index.html, CSS, JavaScript, расмҳо ва дигар файлҳои сайтро илова кун. Агар сайт якчанд файл дошта бошад, папкаи пурраро интихоб кун.':'Add index.html, CSS, JavaScript, images, and other website files. If the site has multiple files, select the entire folder.',
+    '2. Танзимотро пур кун':'2. Configure settings',
+    'Номи барнома, package ID, ранг, нишона, иҷозатҳои лозим ва рафтори WebView-ро интихоб кун.':'Set the app name, package ID, color, icon, required permissions, and WebView behavior.',
+    'Пеш аз сохтмон':'Before building',
+    'Дар қадами «Интегратсия» тугмаи «Санҷидани сайт ва файлҳо»-ро пахш кун. Барнома саҳифаи оғоз, истинодҳои маҳаллӣ, файлҳои гумшуда ва ҳаҷми умумиро месанҷад. Ин санҷиш хатогиҳои маъмулро меёбад, аммо ҷойгузини санҷиши APK-и воқеӣ нест.':'On the Integration step, press “Check website and files”. The app checks the start page, local links, missing files, and total size. This catches common issues but does not replace testing the actual APK.',
+    '3. ZIP-и Android-ро гир':'3. Get the Android ZIP',
+    'Дар охири қадамҳо тугмаи «Сохтани Android ZIP»-ро пахш кун. ZIP дорои Android Studio project ва workflow мебошад.':'At the end, press “Create Android ZIP”. The ZIP contains the Android Studio project and build workflow.',
+    '4. APK-ро дар телефон насб кун':'4. Install the APK on your phone',
+    'Дар GitHub → Actions → Build APK → Run workflow. Пас аз сабз шудани Build, Artifacts-ро зеркашӣ кун (он ZIP аст; дар дохилаш APK мебошад). ZIP-и Artifacts-ро кушо, файли .apk-ро интихоб кун ва Install-ро пахш намо. Агар Android иҷозат пурсад, барои браузер ё Files иҷозати Install unknown apps-ро фаъол кун.':'Open GitHub → Actions → Build APK → Run workflow. When the build succeeds, download Artifacts (a ZIP archive containing the APK). Extract it, select the .apk file, and tap Install. If Android asks, allow “Install unknown apps” for your browser or Files app.',
+    'Муҳим: ин версия APK-ро мустақиман дар браузер намесозад. Браузер ZIP-и лоиҳаро месозад. GitHub Actions APK-ро дар сервер сохта, файли .apk-ро ба Releases мегузорад.':'Important: this version does not build an APK directly in the browser. An Android SDK environment is required; GitHub Actions performs the build on a server.',
+    'Маълумоти барнома':'App details','Номи барнома':'App name','Манбаи контент':'Content source',
+    'Навъи манбаъ':'Source type','Интихоби HTML-файл':'Choose HTML file','Интихоби папкаи сайт':'Choose website folder',
+    'Иловаи файлҳо':'Add files','Пешнамоиш':'Preview','Таҳрири HTML':'Edit HTML',
+    'Саҳифаи оғоз':'Start page','Мавзӯи сайт':'Website theme','Ранги асосӣ':'Accent color',
+    'Самти экран':'Screen orientation','Пинҳон кардани панелҳои система':'Hide system bars',
+    'Иҷозатҳои Android':'Android permissions','Танҳо иҷозатҳоеро интихоб кун, ки сайт воқеан истифода мебарад.':'Select only the permissions your website actually needs.',
+    'Нишонаи барнома':'App icon','Интихоби нишона':'Choose an icon','Бор кардани PNG':'Upload PNG',
+    'Экран оғоз':'Splash screen','Фаъол кардани заставка':'Enable splash screen','Матни заставка':'Splash screen text',
+    'Экран хомӯш нашавад':'Keep screen on','Зеркашии файлҳо':'File downloads','Режими Desktop':'Desktop mode',
+    'Пайвастшавӣ бо Android':'Android integration','Санҷидани сайт ва файлҳо':'Check website and files',
+    'Танзимоти сохтани APK':'APK build settings','Санҷиши лоиҳа':'Review project',
+    'Захира кардани лоиҳа':'Save project','Файлҳо ҳоло интихоб нашудаанд.':'No files selected yet.',
+    'Номи барнома ва Package ID бояд дуруст бошанд. Package ID баъд аз нашр иваз карданаш душвор мешавад.':'The app name and Package ID must be valid. Changing the Package ID after publication is difficult.',
+    'Барои нигоҳ доштани CSS, JavaScript, расмҳо ва видеоҳо папкаи пурраи сайтро интихоб кун. Сохтори дохилии папка нигоҳ дошта мешавад.':'To keep CSS, JavaScript, images, and videos, select the entire website folder. Its folder structure will be preserved.',
+    'Ин интихоб танҳо permission-ро ба AndroidManifest илова мекунад. Дархости иҷозати runtime барои камера, микрофон ва GPS ҳанӯз пурра пайваст нашудааст; ин функсияҳоро фаъол ҳисоб накун.':'This only adds permissions to AndroidManifest. Runtime permission requests for camera, microphone, and GPS are not fully connected yet; do not assume these features are active.',
+    'Муҳофизати файлҳо фаъол':'File protection enabled','Файлҳои дохилӣ тавассути AndroidX WebViewAssetLoader кушода мешаванд; дастрасии озоди file:// баста аст.':'Local files are served through AndroidX WebViewAssetLoader; unrestricted file:// access is disabled.',
+    'Истинодҳои беруна метавонанд дар браузери телефон кушода шаванд. PDF ва Share ҳоло ба APK дохил намешаванд.':'External links may open in the phone browser. PDF and Share are not included in the APK yet.',
+    'Файлҳои сайтро ба Downloads нигоҳ медорад.':'Saves website files to Downloads.',
+    'Ҳангоми истифодаи барнома экран фаъол мемонад.':'Keeps the screen awake while the app is in use.',
+    'Сайтро бо User-Agent-и браузери компютер мекушояд.':'Opens the website with a desktop browser User-Agent.',
+    'Масалан: index.html ё pages/home.html.':'For example: index.html or pages/home.html.',
+    'Пеш аз сохтани APK сайтро санҷ.':'Check the website before building the APK.',
+    'Ин версия Debug APK-и имзошудаи санҷишӣ месозад ва онро ҳамчун файли .apk дар GitHub Releases мегузорад. Барои Google Play калиди имзои шахсӣ ва танзимоти Release лозиманд.':'This version creates a Debug APK for testing. A personal signing key and secure configuration are required for Play Store release.',
+    'Лоиҳа ба ZIP-и Android Studio омода мешавад. APK танҳо баъд аз иҷрои GitHub Actions сохта мешавад.':'The project will be packaged as an Android Studio ZIP. The APK is built only after GitHub Actions runs.',
+    'Файли PDF-и худро интихоб кун.':'Choose your PDF file.'
+  }
+};
+// Additional labels used by dynamically rendered wizard steps.
+Object.assign(uiWords.ru,{
+  'Намуди зоҳирӣ':'Внешний вид','Экрани оғоз':'Экран заставки','Экран оғоз':'Экран заставки',
+  'Номи барнома':'Название приложения','Манбаи контент':'Источник контента','Иҷозатҳои Android':'Разрешения Android',
+  'Нишонаи барнома':'Значок приложения','Муҳофизати файлҳо фаъол':'Защита файлов включена',
+  'Зеркашии файлҳо':'Загрузка файлов','Экран хомӯш нашавад':'Не выключать экран','Режими Desktop':'Режим рабочего стола',
+  'Саҳифаи оғоз':'Стартовая страница','Пеш аз сохтани APK сайтро санҷ.':'Проверьте сайт перед сборкой APK.',
+  'Build type':'Тип сборки','Debug APK (барои санҷиш)':'Debug APK (для тестирования)',
+  'Release APK — калиди имзо лозим (ҳоло дастрас нест)':'Release APK — нужен ключ подписи (пока недоступно)',
+  'Debug + Release — баъдтар':'Debug + Release — позже','Minimum Android':'Минимальная версия Android',
+  'Android 10 ё навтар (API 29+)':'Android 10 или новее (API 29+)','Application ID':'Идентификатор приложения',
+  'Fullscreen':'Полноэкранный режим','Automatic':'Автоматически','Dark':'Тёмная','Light':'Светлая',
+  'Portrait':'Книжная','Landscape':'Альбомная','Open external links':'Открывать внешние ссылки',
+  'Open links outside the app in browser.':'Открывать внешние ссылки в браузере.',
+  'Allow JavaScript inside your website.':'Разрешить JavaScript на сайте.',
+  'Local storage and website settings.':'Локальное хранилище и настройки сайта.',
+  'Allow pinch-to-zoom.':'Разрешить масштабирование жестом.',
+  'Loading…':'Загрузка…','Ready. Waiting for build ZIP…':'Готово. Ожидание создания ZIP…',
+  'Например: com.example.myapp · латинские буквы, цифры и точки.':'Например: com.example.myapp · латинские буквы, цифры и точки.',
+  'URL бояд дастрас бошад. Барои APK-и офлайн файлҳои сайтро ворид кун.':'URL должен быть доступен. Для офлайн-APK добавьте файлы сайта.'
+});
+Object.assign(uiWords.en,{
+  'Намуди зоҳирӣ':'Appearance','Экрани оғоз':'Splash screen','Экран оғоз':'Splash screen',
+  'Номи барнома':'App name','Манбаи контент':'Content source','Иҷозатҳои Android':'Android permissions',
+  'Нишонаи барнома':'App icon','Муҳофизати файлҳо фаъол':'File protection enabled',
+  'Зеркашии файлҳо':'File downloads','Экран хомӯш нашавад':'Keep screen on','Режими Desktop':'Desktop mode',
+  'Саҳифаи оғоз':'Start page','Пеш аз сохтани APK сайтро санҷ.':'Check the website before building the APK.',
+  'Build type':'Build type','Debug APK (барои санҷиш)':'Debug APK (for testing)',
+  'Release APK — калиди имзо лозим (ҳоло дастрас нест)':'Release APK — signing key required (not available yet)',
+  'Debug + Release — баъдтар':'Debug + Release — coming later','Minimum Android':'Minimum Android',
+  'Android 10 ё навтар (API 29+)':'Android 10 or newer (API 29+)','Application ID':'Application ID',
+  'Fullscreen':'Fullscreen','Automatic':'Automatic','Dark':'Dark','Light':'Light',
+  'Portrait':'Portrait','Landscape':'Landscape','Open external links':'Open external links',
+  'Open links outside the app in browser.':'Open external links in your browser.',
+  'Allow JavaScript inside your website.':'Allow JavaScript on your website.',
+  'Local storage and website settings.':'Local storage and website settings.',
+  'Allow pinch-to-zoom.':'Allow pinch-to-zoom.',
+  'Loading…':'Loading…','Ready. Waiting for build ZIP…':'Ready. Waiting for ZIP creation…',
+  'URL бояд дастрас бошад. Барои APK-и офлайн файлҳои сайтро ворид кун.':'The URL must be accessible. Add website files for an offline APK.'
+});
+
+// HASANEX 13.0 language coverage: labels generated by the Android wizard.
+Object.assign(uiWords.ru,{
+ 'Open external links':'Открывать внешние ссылки',
+ 'Open links outside the app in browser.':'Открывать ссылки вне приложения в браузере.',
+ 'Саҳифаи оғоз':'Стартовая страница',
+ 'Масалан: index.html ё pages/home.html.':'Например: index.html или pages/home.html.',
+ 'Санҷидани сайт ва файлҳо':'Проверить сайт и файлы',
+ 'Пеш аз сохтани APK сайтро санҷ.':'Проверьте сайт перед сборкой APK.',
+ 'Бозгашт':'Назад','Давом':'Далее','Қадам':'Шаг',
+ 'Маълумоти барнома':'Информация о приложении','Маълумот':'Данные',
+ 'Манбаи контент':'Источник контента','Навъи манбаъ':'Тип источника',
+ 'Интихоби HTML-файл':'Выбрать HTML-файл','Файлҳо ҳоло интихоб нашудаанд.':'Файлы ещё не выбраны.',
+ 'Намоиш':'Внешний вид','Иҷозатҳо':'Разрешения','Заставка':'Заставка',
+ 'Танзимоти APK':'Настройки APK','Санҷиш ва сохтан':'Проверка и сборка',
+ 'СОХТАНИ ZIP':'СОЗДАТЬ ZIP','Захира кардани лоиҳа':'Сохранить проект',
+ 'Сохтани Android ZIP':'Создать Android ZIP','Ready. Waiting for build ZIP…':'Готово. Ожидание создания ZIP…',
+ 'PDF ва Share ҳоло ба APK дохил намешаванд.':'PDF и Share пока не включены в APK.',
+ 'Истинодҳои беруна метавонанд дар браузери телефон кушода шаванд.':'Внешние ссылки могут открываться в браузере телефона.',
+ 'URL бояд дастрас бошад. Барои APK-и офлайн файлҳои сайтро ворид кун.':'URL должен быть доступен. Для офлайн-APK добавьте файлы сайта.',
+ 'Local HTML files':'Локальные HTML-файлы','Website URL':'URL сайта',
+ 'App name':'Название приложения','Version':'Версия','Version code':'Код версии',
+ 'Build type':'Тип сборки','Minimum Android':'Минимальная версия Android',
+ 'Application ID':'Идентификатор приложения','Content files':'Файлы контента',
+ 'Theme / accent':'Тема / цвет','Permissions':'Разрешения','Build':'Сборка',
+ 'Open':'Открыть','Export JSON':'Экспорт JSON','Delete':'Удалить',
+ 'HTML / HTM':'HTML / HTM','Loading…':'Загрузка…'
+});
+Object.assign(uiWords.en,{
+ 'Open external links':'Open external links',
+ 'Open links outside the app in browser.':'Open links outside the app in your browser.',
+ 'Саҳифаи оғоз':'Start page',
+ 'Масалан: index.html ё pages/home.html.':'For example: index.html or pages/home.html.',
+ 'Санҷидани сайт ва файлҳо':'Check website and files',
+ 'Пеш аз сохтани APK сайтро санҷ.':'Check the website before building the APK.',
+ 'Бозгашт':'Back','Давом':'Continue','Қадам':'Step',
+ 'Маълумоти барнома':'App information','Маълумот':'Details',
+ 'Манбаи контент':'Content source','Навъи манбаъ':'Source type',
+ 'Интихоби HTML-файл':'Choose HTML file','Файлҳо ҳоло интихоб нашудаанд.':'No files selected yet.',
+ 'Намоиш':'Appearance','Иҷозатҳо':'Permissions','Заставка':'Splash screen',
+ 'Танзимоти APK':'APK settings','Санҷиш ва сохтан':'Review & build',
+ 'СОХТАНИ ZIP':'CREATE ZIP','Захира кардани лоиҳа':'Save project',
+ 'Сохтани Android ZIP':'Create Android ZIP','Ready. Waiting for build ZIP…':'Ready. Waiting for ZIP creation…',
+ 'PDF ва Share ҳоло ба APK дохил намешаванд.':'PDF and Share are not included in the APK yet.',
+ 'Истинодҳои беруна метавонанд дар браузери телефон кушода шаванд.':'External links may open in your phone browser.',
+ 'URL бояд дастрас бошад. Барои APK-и офлайн файлҳои сайтро ворид кун.':'The URL must be reachable. Add website files for an offline APK.',
+ 'Local HTML files':'Local HTML files','Website URL':'Website URL',
+ 'Номи барнома':'App name','Version':'Version','Version code':'Version code',
+ 'Build type':'Build type','Minimum Android':'Minimum Android',
+ 'Application ID':'Application ID','Content files':'Content files',
+ 'Theme / accent':'Theme / accent','Permissions':'Permissions','Build':'Build',
+ 'Open':'Open','Export JSON':'Export JSON','Delete':'Delete',
+ 'HTML / HTM':'HTML / HTM','Loading…':'Loading…'
+});
+// Expanded interface translations for AI workspace and common controls.
+Object.assign(uiWords.ru,{
+ '🤖 HASANEX AI AGENT TEAM':'🤖 КОМАНДА ИИ HASANEX','Як дархост — гурӯҳи агентҳо. Онҳо вазифаро тақсим мекунанд, HTML месозанд, натиҷаҳоро муқоиса мекунанд ва агенти роҳбар версияи ҷамъбастиро омода мекунад.':'Один запрос — команда агентов. Они распределяют задачу, создают HTML, сравнивают результаты, а ведущий агент собирает итоговую версию.',
+ '1. Дастаи ИИ-ро интихоб кун':'1. Выберите команду ИИ','2. Тарзи кори ИИ-ро интихоб кун':'2. Выберите режим работы ИИ','Вазифаи ИИ':'Задача ИИ','Сохтани барнома / сайт / бозӣ':'Создать приложение / сайт / игру','Ислоҳи код ва хатогиҳо':'Исправить код и ошибки','Санҷиш ва баррасии сифат':'Проверка качества','Такмили дизайн ва UX':'Улучшить дизайн и UX','Фаҳмондани код':'Объяснить код','Тарҷумаи интерфейс':'Перевести интерфейс','Суръат ва оптимизатсия':'Скорость и оптимизация','Дархости ту':'Ваш запрос','Ёрдамчии ройгон (бе API Key)':'Бесплатный помощник (без API Key)','Сохтан бо як ИИ':'Создать с одним ИИ','Ҳанӯз дархост фиристода нашудааст.':'Запрос ещё не отправлен.','3. Натиҷаи HTML':'3. Результат HTML','Кушодан дар муҳаррир':'Открыть в редакторе','Омода кардани APK / ZIP':'Подготовить APK / ZIP','Танзими калидҳо ва моделҳо (ҳар ИИ — калиди алоҳида)':'Настройка ключей и моделей (для каждого ИИ — отдельный ключ)','API key':'API-ключ','Модел':'Модель','Endpoint':'Адрес API','Дигар моделҳо':'Другие модели','Иҷрои ҷудогона: кадом ИИ?':'Отдельный запуск: какой ИИ?','Дастури таҳиягар':'Руководство разработчика','ИИ-программист':'ИИ-программист','Бо забони одӣ барнома ё бозӣ соз, кодро ислоҳ кун ва HTML ё ZIP гир.':'Создавайте приложения и игры обычным языком, исправляйте код и получайте HTML или ZIP.'
+});
+Object.assign(uiWords.en,{
+ '🤖 HASANEX AI AGENT TEAM':'🤖 HASANEX AI AGENT TEAM','Як дархост — гурӯҳи агентҳо. Онҳо вазифаро тақсим мекунанд, HTML месозанд, натиҷаҳоро муқоиса мекунанд ва агенти роҳбар версияи ҷамъбастиро омода мекунад.':'One request — a team of agents. They split the task, create HTML, compare results, and a lead agent prepares the combined version.',
+ '1. Дастаи ИИ-ро интихоб кун':'1. Choose your AI team','2. Тарзи кори ИИ-ро интихоб кун':'2. Choose the AI workflow','Вазифаи ИИ':'AI task','Сохтани барнома / сайт / бозӣ':'Build an app / website / game','Ислоҳи код ва хатогиҳо':'Fix code and errors','Санҷиш ва баррасии сифат':'Quality review and testing','Такмили дизайн ва UX':'Improve design and UX','Фаҳмондани код':'Explain code','Тарҷумаи интерфейс':'Translate interface','Суръат ва оптимизатсия':'Speed and optimization','Дархости ту':'Your request','Ёрдамчии ройгон (бе API Key)':'Free helper (no API key)','Сохтан бо як ИИ':'Build with one AI','Ҳанӯз дархост фиристода нашудааст.':'No request has been sent yet.','3. Натиҷаи HTML':'3. HTML output','Кушодан дар муҳаррир':'Open in editor','Омода кардани APK / ZIP':'Prepare APK / ZIP','Танзими калидҳо ва моделҳо (ҳар ИИ — калиди алоҳида)':'Configure keys and models (each AI needs its own key)','API key':'API key','Модел':'Model','Endpoint':'Endpoint','Дигар моделҳо':'Other models','Иҷрои ҷудогона: кадом ИИ?':'Single run: choose an AI','ИИ-программист':'AI programmer','Бо забони одӣ барнома ё бозӣ соз, кодро ислоҳ кун ва HTML ё ZIP гир.':'Create apps and games in plain language, fix code, and export HTML or ZIP.'
+});
+const originalTextNodes=new WeakMap();
+function translateDynamicLabels(root=document){
+  const map=uiWords[lang]||{};
+  root.querySelectorAll?.('input[placeholder],textarea[placeholder],button[title],[aria-label]').forEach(el=>{for(const attr of ['placeholder','title','aria-label']){if(!el.hasAttribute(attr))continue;const key='data-original-'+attr;if(!el.hasAttribute(key))el.setAttribute(key,el.getAttribute(attr));const original=el.getAttribute(key);el.setAttribute(attr,map[original]||original);}});
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const n of nodes){
+    if(!originalTextNodes.has(n)) originalTextNodes.set(n,n.nodeValue);
+    const original=originalTextNodes.get(n);
+    n.nodeValue=original;
+    const value=original.trim();
+    if(map[value]) n.nodeValue=original.replace(value,map[value]);
+  }
+}
+
+const steps=['Маълумот','Контент','Намоиш','Иҷозатҳо','Нишона','Заставка','WebView','Интегратсия','Танзимоти APK','Санҷиш ва сохтан'];
+const stepsRu=['Основное','Контент','Внешний вид','Разрешения','Иконка','Заставка','WebView','Интеграция','Настройки APK','Проверка и сборка'];
+const stepsEn=['Details','Content','Appearance','Permissions','Icon','Splash screen','WebView','Integration','APK settings','Review & build'];
+const permissionDefs=[
+['camera','Камера','Camera access for web pages','android.permission.CAMERA'],
+['microphone','Микрофон','Audio recording','android.permission.RECORD_AUDIO'],
+['location','Ҷойгиршавӣ','GPS / location access','android.permission.ACCESS_FINE_LOCATION'],
+['images','Расмҳо','Read images on Android 13+','android.permission.READ_MEDIA_IMAGES'],
+['video','Видео','Read videos on Android 13+','android.permission.READ_MEDIA_VIDEO'],
+['audio','Аудио','Read audio files on Android 13+','android.permission.READ_MEDIA_AUDIO']
+];
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.screen===id));if(id==='projects')renderProjects();if(id==='home')renderRecent();translateDynamicLabels($(id));if(id==='ai')updateAITaskHelp();window.scrollTo(0,0)}
+function setLang(v){
+  if(!['tg','ru','en'].includes(v)) v='tg';
+  try{localStorage.setItem('hasanex-language',v)}catch(e){}
+  if($('lang')) $('lang').value=v;
+  document.querySelectorAll('[data-guide-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.guideLang === v);
+  });
+  document.querySelectorAll('[data-support-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.supportLang === v);
+  });
+
+  lang=v;
+  document.documentElement.lang=v;
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k=el.dataset.i;
+    if(dict[v][k])el.textContent=dict[v][k];
+  });
+  // Re-render the current wizard step only when the user changes language before entering data.
+  if($('wizard')?.classList.contains('active')) {
+    const saved={}; document.querySelectorAll('#stepContent input, #stepContent select, #stepContent textarea').forEach(el=>{if(el.id)saved[el.id]={value:el.value,checked:el.checked};});
+    renderStep();
+    Object.entries(saved).forEach(([id,v])=>{const el=$(id);if(el){if(el.type==='checkbox')el.checked=v.checked;else el.value=v.value;}});
+  }
+  translateDynamicLabels(document.body);
+  if(typeof updateAITaskHelp==='function')updateAITaskHelp();
+}
+$('lang').addEventListener('change',e=>setLang(e.target.value));
+function startWizard(m){mode=m;step=0;project={name:'My App',package:'com.example.myapp',version:'1.0',versionCode:'1',orientation:'portrait',theme:'dark',accent:'#168df0',splash:false,js:true,dom:true,downloads:true,pdf:false,permissions:[],files:[],icon:'🚀',contentType:'local',startPage:'index.html',startPageAuto:true,keepScreenOn:false,desktopMode:false,fileAccess:false,zoom:true,external:true,share:true,splashText:'',iconPng:null};selectedFiles=[];htmlText='';renderStep();show('wizard')}
+function renderStep(){
+let labels=lang==='ru'?stepsRu:lang==='en'?stepsEn:steps;
+$('stepLabel').textContent=(lang==='ru'?'Шаг ':lang==='en'?'Step ':'Қадам ')+(step+1)+' / 10 · '+labels[step];$('stepPct').textContent=((step+1)*10)+'%';$('bar').style.width=((step+1)*10)+'%';$('modeTag').textContent=mode.toUpperCase();
+$('prevStep').disabled=step===0;$('nextStep').textContent=step===9?(lang==='ru'?'СОЗДАТЬ APK-ПРОЕКТ':lang==='en'?'MAKE APK PROJECT':'СОХТАНИ ЛОИҲАИ APK'):(lang==='ru'?'Далее':lang==='en'?'Next':'Давом');
+const c=$('stepContent');
+if(step===0)c.innerHTML=`<h2>${lang==='ru'?'Основная информация':lang==='en'?'App details':'Маълумоти барнома'}</h2><div class="field"><label>${lang==='ru'?'Название приложения':'Номи барнома'}</label><input id="pName" value="${esc(project.name)}" placeholder="My App"></div><div class="field"><label>Package ID</label><input id="pPackage" value="${esc(project.package)}"><small class="help">Например: com.example.myapp · латинские буквы, цифры и точки.</small></div><div class="row"><div class="field"><label>Version</label><input id="pVersion" value="${esc(project.version)}"></div><div class="field"><label>Version code</label><input id="pVersionCode" type="number" min="1" value="${esc(project.versionCode)}"></div></div><div class="notice">Номи барнома ва Package ID бояд дуруст бошанд. Package ID баъд аз нашр иваз карданаш душвор мешавад.</div>`;
+if(step===1)c.innerHTML=`<h2>${lang==='ru'?'Источник контента':'Манбаи контент'}</h2><div class="field"><label>${lang==='ru'?'Тип источника':'Навъи манбаъ'}</label><select id="contentType"><option value="local">Local HTML files</option><option value="url">Website URL</option></select></div><div id="localSource"><div class="filebox" onclick="$('htmlInput').click()">📄<strong>${lang==='ru'?'Выбрать HTML-файл':'Интихоби HTML-файл'}</strong><span class="muted">HTML / HTM</span></div><div class="row" style="margin-top:10px"><button class="btn secondary" onclick="$('folderInput').click()">📁 ${lang==='ru'?'Выбрать папку сайта':'Интихоби папкаи сайт'}</button><button class="btn ghost" onclick="$('extraInput').click()">＋ ${lang==='ru'?'Добавить файлы':'Иловаи файлҳо'}</button></div><div id="chosenFiles" class="filelist"></div><div class="row" style="margin-top:10px"><button class="btn secondary" onclick="previewSelected()">👁 ${lang==='ru'?'Предпросмотр':'Пешнамоиш'}</button><button class="btn ghost" onclick="editSelected()">✎ ${lang==='ru'?'Редактировать HTML':'Таҳрири HTML'}</button></div></div><div id="urlSource" class="field" style="display:none"><label>Website URL</label><input id="siteUrl" placeholder="https://example.com"><small class="help">URL бояд дастрас бошад. Барои APK-и офлайн файлҳои сайтро ворид кун.</small></div><div class="notice">Барои нигоҳ доштани CSS, JavaScript, расмҳо ва видеоҳо папкаи пурраи сайтро интихоб кун. Сохтори дохилии папка нигоҳ дошта мешавад.</div>`;
+if(step===2)c.innerHTML=`<h2>${lang==='ru'?'Внешний вид':'Намуди зоҳирӣ'}</h2><div class="field"><label>${lang==='ru'?'Тема сайта':'Мавзӯи сайт'}</label><select id="theme"><option value="system">Automatic</option><option value="dark">Dark</option><option value="light">Light</option></select></div><div class="field"><label>${lang==='ru'?'Основной цвет':'Ранги асосӣ'}</label><div class="swatches">${['#168df0','#18b7a1','#7b5cff','#e84d8a','#ff9e2c','#f04444','#ffffff'].map(x=>`<button class="swatch ${project.accent===x?'selected':''}" style="background:${x}" onclick="project.accent='${x}';renderStep()"></button>`).join('')}</div></div><div class="field"><label>${lang==='ru'?'Ориентация экрана':'Самти экран'}</label><select id="orientation"><option value="portrait">Portrait</option><option value="landscape">Landscape</option><option value="unspecified">Automatic</option></select></div><div class="choice"><input type="checkbox" id="fullscreen"><div><b>Fullscreen</b><small>${lang==='ru'?'Скрыть системные панели':'Пинҳон кардани панелҳои система'}</small></div></div>`;
+if(step===3)c.innerHTML=`<h2>${lang==='ru'?'Разрешения Android':'Иҷозатҳои Android'}</h2><p class="muted">${lang==='ru'?'Выбирайте только то, что действительно нужно сайту.':'Танҳо иҷозатҳоеро интихоб кун, ки сайт воқеан истифода мебарад.'}</p>${permissionDefs.map(p=>`<label class="choice"><input type="checkbox" class="perm" value="${p[0]}" ${project.permissions.includes(p[0])?'checked':''}><div><b>${p[1]}</b><small>${p[2]}</small><small style="color:#62bfff">${p[3]}</small></div></label>`).join('')}<div class="notice">Ин интихоб танҳо permission-ро ба AndroidManifest илова мекунад. Дархости иҷозати runtime барои камера, микрофон ва GPS ҳанӯз пурра пайваст нашудааст; ин функсияҳоро фаъол ҳисоб накун.</div>`;
+if(step===4)c.innerHTML=`<h2>${lang==='ru'?'Иконка приложения':'Нишонаи барнома'}</h2><div class="panel" style="text-align:center"><div id="iconSample" style="font-size:64px">${project.icon}</div><div class="field"><label>${lang==='ru'?'Выберите значок':'Интихоби нишона'}</label><div class="swatches">${['🚀','🌐','⚡','📱','🎮','⭐','🔥','💎','🛠️','📚','🎵','🧩'].map(x=>`<button class="card" style="width:58px;padding:8px;text-align:center;font-size:25px" onclick="project.icon='${x}';renderStep()">${x}</button>`).join('')}</div></div><button class="btn secondary" onclick="$('iconFile').click()">🖼 ${lang==='ru'?'Загрузить PNG':'Бор кардани PNG'}</button><input type="file" id="iconFile" accept="image/png,image/jpeg" hidden onchange="loadIcon(event)"><small class="help">Нишонаҳои тайёр ройгонанд. Агар PNG бор кунӣ, он ҳамчун нишонаи Android ба лоиҳа дохил мешавад.</small></div>`;
+if(step===5)c.innerHTML=`<h2>${lang==='ru'?'Экран заставки':'Экрани оғоз'}</h2><label class="choice"><input type="checkbox" id="splash" ${project.splash?'checked':''}><div><b>${lang==='ru'?'Включить заставку':'Фаъол кардани заставка'}</b><small>${lang==='ru'?'Показывать название и значок при запуске':'Нишона ва номи барнома ҳангоми оғоз нишон дода шавад'}</small></div></label><div class="field"><label>${lang==='ru'?'Текст заставки':'Матни заставка'}</label><input id="splashText" value="${esc(project.name)}"></div><div class="panel" style="text-align:center;background:#05080d"><div style="font-size:46px">${project.icon}</div><b>${esc(project.name)}</b><p class="muted">Loading…</p></div>`;
+if(step===6)c.innerHTML=`<h2>WebView</h2><label class="choice"><input type="checkbox" id="js" ${project.js?'checked':''}><div><b>JavaScript</b><small>Allow JavaScript inside your website.</small></div></label><label class="choice"><input type="checkbox" id="dom" ${project.dom?'checked':''}><div><b>DOM Storage</b><small>Local storage and website settings.</small></div></label><label class="choice"><input type="checkbox" id="fileAccess" checked disabled><div><b>Муҳофизати файлҳо фаъол</b><small>Файлҳои дохилӣ тавассути AndroidX WebViewAssetLoader кушода мешаванд; дастрасии озоди file:// баста аст.</small></div></label><label class="choice"><input type="checkbox" id="zoom" ${project.zoom!==false?'checked':''}><div><b>Zoom controls</b><small>Allow pinch-to-zoom.</small></div></label><label class="choice"><input type="checkbox" id="downloads" ${project.downloads?'checked':''}><div><b>Зеркашии файлҳо</b><small>Файлҳои сайтро ба Downloads нигоҳ медорад.</small></div></label><label class="choice"><input type="checkbox" id="keepScreenOn" ${project.keepScreenOn?'checked':''}><div><b>Экран хомӯш нашавад</b><small>Ҳангоми истифодаи барнома экран фаъол мемонад.</small></div></label><label class="choice"><input type="checkbox" id="desktopMode" ${project.desktopMode?'checked':''}><div><b>Режими Desktop</b><small>Сайтро бо User-Agent-и браузери компютер мекушояд.</small></div></label><div class="notice">JavaScript ва file access танҳо барои сайтҳои боэътимод фаъол бошанд.</div>`;
+if(step===7)c.innerHTML=`<h2>${lang==='ru'?'Интеграция с Android':lang==='en'?'Android integration':'Пайвастшавӣ бо Android'}</h2><div class="notice">${lang==='ru'?'Внешние ссылки могут открываться в браузере телефона. PDF и Share пока не включаются в APK.':lang==='en'?'External links can open in your phone browser. PDF and Share are not yet included in the APK.':'Истинодҳои беруна метавонанд дар браузери телефон кушода шаванд. PDF ва Share ҳоло ба APK дохил намешаванд.'}</div><label class="choice"><input type="checkbox" id="external" ${project.external!==false?'checked':''}><div><b>${lang==='ru'?'Открывать внешние ссылки':lang==='en'?'Open external links':'Кушодани истинодҳои беруна'}</b><small>${lang==='ru'?'Открывать внешние ссылки в браузере.':lang==='en'?'Open links outside the app in browser.':'Истинодҳои берунаро дар браузер кушояд.'}</small></div></label><div class="field"><label>${lang==='ru'?'Начальная страница':lang==='en'?'Start page':'Саҳифаи оғоз'}</label><input id="startPage" value="${esc(project.startPage||'index.html')}" placeholder="index.html"><small class="help">${lang==='ru'?'Стартовая HTML-страница определяется автоматически. При необходимости можно изменить вручную.':lang==='en'?'The start HTML page is detected automatically. You can change it manually if needed.':'Саҳифаи асосии HTML худкор муайян мешавад. Агар лозим бошад, дастӣ иваз кун.'}</small><div id="autoStartStatus" class="muted" style="margin-top:6px"></div></div><button class="btn secondary full" onclick="runSiteCheck()">🔎 ${lang==='ru'?'Проверить сайт и файлы':lang==='en'?'Check website and files':'Санҷидани сайт ва файлҳо'}</button><div id="siteCheckBox" class="panel muted" style="margin-top:10px">${lang==='ru'?'Перед сборкой APK проверьте сайт.':lang==='en'?'Check your website before building the APK.':'Пеш аз сохтани APK сайтро санҷ.'}</div>`;
+if(step===8)c.innerHTML=`<h2>${lang==='ru'?'Настройки сборки':lang==='en'?'Build settings':'Танзимоти сохтани APK'}</h2><div class="field"><label>${lang==='ru'?'Тип сборки':lang==='en'?'Build type':'Навъи сохтмон'}</label><select id="buildType"><option value="debug">Debug APK (${lang==='ru'?'для тестирования':lang==='en'?'for testing':'барои санҷиш'})</option><option value="release" disabled>Release APK — ${lang==='ru'?'нужен ключ подписи':'signing key required'}</option><option value="both" disabled>Debug + Release — ${lang==='ru'?'позже':lang==='en'?'later':'баъдтар'}</option></select></div><div class="field"><label>${lang==='ru'?'Минимальная версия Android':lang==='en'?'Minimum Android':'Минимуми Android'}</label><select id="minSdk"><option value="29">Android 10+ (API 29)</option></select></div><div class="field"><label>Application ID</label><input id="packageReview" value="${esc(project.package)}" disabled></div><div class="notice">${lang==='ru'?'Укажите HTTPS-адрес сервера. Сервер соберёт и вернёт настоящий APK.':lang==='en'?'Enter your build server HTTPS URL. The server compiles and returns the real APK.':'Суроғаи HTTPS-и серверро ворид кун. Сервер APK-и ҳақиқиро месозад ва бармегардонад.'}</div>`;
+if(step===9)c.innerHTML=`<h2>${lang==='ru'?'Проверка и создание APK':lang==='en'?'Review & build APK':'Санҷиш ва сохтани APK'}</h2><div id="reviewSummary"></div><div class="notice success">${lang==='ru'?'HASANEX отправит файлы на ваш APK-сервер. Сервер соберёт настоящий устанавливаемый APK и вернёт его прямо в телефон. ZIP и GitHub пользователю не нужны.':lang==='en'?'HASANEX sends your project files to your APK build server. The server compiles a real installable APK and returns it directly to your phone. No ZIP or GitHub is needed for the user.':'HASANEX файлҳои лоиҳаро ба сервери APK мефиристад. Сервер APK-и ҳақиқии насбшаванда месозад ва мустақим ба телефон бармегардонад. Ба истифодабаранда ZIP ё GitHub лозим нест.'}</div><div class="field" style="margin-top:12px"><label>${lang==='ru'?'Адрес вашего APK-сервера':'APK build server URL'}</label><input id="buildApiUrl" type="url" placeholder="https://your-server.example" value="${esc(localStorage.getItem('hasanex-build-api')||'')}"><small class="help">${lang==='ru'?'Один раз укажите HTTPS-адрес развёрнутого сервера. Без работающего сервера APK собрать нельзя.':lang==='en'?'Enter the HTTPS URL of your deployed build server once. A running server is required to compile APKs.':'Суроғаи HTTPS-и сервери насбшударо як бор ворид кун. Бе сервери фаъол APK сохта намешавад.'}</small></div><button class="btn full" style="margin-top:12px;background:#159b62" onclick="buildApkServer()">📦 ${lang==='ru'?'СОЗДАТЬ APK':'BUILD APK'}</button><button class="btn ghost full" style="margin-top:8px" onclick="saveProject()">💾 ${lang==='ru'?'Сохранить проект':lang==='en'?'Save project':'Захира кардани лоиҳа'}</button><div id="buildLog" class="log" style="margin-top:12px">${lang==='ru'?'Готово к созданию APK…':lang==='en'?'Ready to build APK…':'Барои сохтани APK омода…'}</div>`;
+syncStepFields();
+if(step===9)renderSummary();
+translateDynamicLabels(c);
+}
+function syncStepFields(){if(step===1){$('contentType').value=project.contentType||'local';$('contentType').onchange=()=>{project.contentType=$('contentType').value;$('localSource').style.display=project.contentType==='local'?'block':'none';$('urlSource').style.display=project.contentType==='url'?'block':'none'};$('localSource').style.display=project.contentType==='local'?'block':'none';$('urlSource').style.display=project.contentType==='url'?'block':'none';if(project.url)$('siteUrl').value=project.url;renderChosenFiles()}
+if(step===2){$('theme').value=project.theme;$('orientation').value=project.orientation;$('fullscreen').checked=!!project.fullscreen}
+if(step===5){$('splash').checked=!!project.splash}
+if(step===6){['js','dom','fileAccess','zoom','downloads','keepScreenOn','desktopMode'].forEach(k=>{if($(k))$(k).checked=!!project[k]})}
+if(step===7){if($('external'))$('external').checked=project.external!==false;const input=$('startPage');if(input){input.addEventListener('input',()=>{project.startPageAuto=false;});}const status=$('autoStartStatus');if(status){status.textContent=project.startPageAuto?(lang==='ru'?'✓ Страница определена автоматически':lang==='en'?'✓ Start page detected automatically':'✓ Саҳифа худкор муайян карда шуд'):(lang==='ru'?'Ручной выбор страницы':lang==='en'?'Start page selected manually':'Саҳифа дастӣ интихоб шудааст');}}}
+function collectStep(){
+if(step===0){project.name=$('pName').value.trim();project.package=$('pPackage').value.trim();project.version=$('pVersion').value.trim();project.versionCode=$('pVersionCode').value.trim();if(!project.name)return alert('Номи барномаро навис.'),false;if(!/^[1-9][0-9]*$/.test(project.versionCode))return alert('Version code бояд адади мусбат бошад.'),false;if(!/^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*){1,}$/.test(project.package)||project.package.split('.').some(x=>['class','public','static','void','int','long','float','double','boolean','if','else','for','while','switch','case','new','return','package','import','this','super','null','true','false','interface','enum','final','private','protected','try','catch','throw','throws','extends','implements','abstract','synchronized','volatile','transient','native','assert','default','do','break','continue','byte','char','short'].includes(x)))return alert('Package ID нодуруст аст ё калимаи махсус дорад. Мисол: com.example.myapp'),false}
+if(step===1){project.contentType=$('contentType').value;if(project.contentType==='url'){project.url=$('siteUrl').value.trim();try{let u=new URL(project.url);if(!['https:','http:'].includes(u.protocol))throw 0;}catch{return alert('Суроғаи сайт нодуруст аст. Мисол: https://example.com'),false}}else if(!selectedFiles.length&&!htmlText)return alert('Аввал HTML ё папкаи сайтро интихоб кун.'),false;if(selectedFiles.length>5000)return alert('Лоиҳа аз 5000 файл зиёд аст.'),false;let total=selectedFiles.reduce((n,f)=>n+f.size,0);if(total>100*1024*1024)return alert('Ҳаҷми файлҳо аз 100 MB зиёд аст. Файлҳои калонро кам кун.'),false}
+if(step===2){project.theme=$('theme').value;project.orientation=$('orientation').value;project.fullscreen=$('fullscreen').checked}
+if(step===3)project.permissions=[...document.querySelectorAll('.perm:checked')].map(x=>x.value);
+if(step===5){project.splash=$('splash').checked;project.splashText=$('splashText').value}
+if(step===6)['js','dom','fileAccess','zoom','downloads','keepScreenOn','desktopMode'].forEach(k=>project[k]=$(k).checked);
+if(step===7){project.external=$('external').checked;project.startPage=$('startPage').value.trim()||'index.html';if(project.contentType==='local'&&!selectedFiles.some(f=>f.path===project.startPage)&&!selectedFiles.some(f=>f.path.endsWith('/'+project.startPage)))return alert('Файли оғози '+project.startPage+' дар папка ёфт нашуд. Номи index.html ё роҳи дурустро навис.'),false}
+if(step===8){project.buildType=$('buildType').value;project.minSdk=$('minSdk').value}
+return true}
+function moveStep(d){if(d>0&&!collectStep())return;if(step===9&&d>0){buildZip('device');return}step=Math.max(0,Math.min(9,step+d));renderStep();window.scrollTo(0,0)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('htmlInput').onchange=e=>addFiles(e.target.files,true);$('folderInput').onchange=e=>addFiles(e.target.files,false);$('extraInput').onchange=e=>addFiles(e.target.files,false);
+function detectStartPage(){
+  const html=selectedFiles.filter(f=>/\.html?$/i.test(f.path));
+  if(!html.length)return '';
+  const rank=f=>{const p=f.path.toLowerCase();const base=p.split('/').pop();if(base==='index.html'||base==='index.htm')return p.includes('/')?1:0;if(base==='home.html'||base==='home.htm')return 2;if(base==='main.html'||base==='main.htm')return 3;if(base==='default.html'||base==='default.htm')return 4;return 5;};
+  html.sort((a,b)=>rank(a)-rank(b)||a.path.length-b.path.length);
+  return html[0].path;
+}
+async function addFiles(files,primary){
+  for(const f of files){let path=f.webkitRelativePath?f.webkitRelativePath.split('/').slice(1).join('/'):f.name;path=path.replace(/^\/+|\\/g,'');if(!path||path.split('/').some(x=>x==='..'))continue;let data=await f.arrayBuffer();selectedFiles=selectedFiles.filter(x=>x.path!==path);selectedFiles.push({path,name:f.name,type:f.type,size:f.size,data});if((primary||f.name.toLowerCase()==='index.html')&&/\.html?$/i.test(f.name)&&(!htmlText||f.name.toLowerCase()==='index.html'))htmlText=await f.text()}
+  if(project.startPageAuto!==false){const detected=detectStartPage();if(detected)project.startPage=detected;}
+  project.files=selectedFiles.map(f=>({path:f.path,name:f.name,type:f.type,size:f.size}));renderChosenFiles();
+  if(step===7)renderStep();
+}
+function renderChosenFiles(){let el=$('chosenFiles');if(!el)return;el.innerHTML=selectedFiles.length?`<div class="tag">${selectedFiles.length} file(s) selected</div>`+selectedFiles.map((f,i)=>`<div class="fileitem"><span>📄 ${esc(f.path)}<small class="muted"> · ${Math.ceil(f.size/1024)} KB</small></span><button class="mini-btn" onclick="removeSelectedFile(${i})" aria-label="Remove file">✕</button></div>`).join(''):'<p class="muted">Файлҳо ҳоло интихоб нашудаанд.</p>'}
+
+function removeSelectedFile(i){
+  if(i<0||i>=selectedFiles.length)return;
+  const removed=selectedFiles.splice(i,1)[0];
+  if(removed && /(^|\/)index\.html?$/i.test(removed.path)){
+    const next=selectedFiles.find(x=>/(^|\/)index\.html?$/i.test(x.path));
+    htmlText=next?new TextDecoder().decode(next.data):'';
+  }
+  if(project.startPageAuto!==false){const detected=detectStartPage();if(detected)project.startPage=detected;}
+  project.files=selectedFiles.map(f=>({path:f.path,name:f.name,type:f.type,size:f.size}));
+  renderChosenFiles();
+}
+function normalizeProjectPath(path){return String(path||'').replace(/\\/g,'/').replace(/^\/+/,'');}
+function runSiteCheck(){
+  const box=$('siteCheckBox'); if(!box)return;
+  const issues=[],notes=[];
+  if(project.contentType==='url'){
+    const raw=$('siteUrl')?.value.trim()||project.url||'';
+    try{
+      const u=new URL(raw);
+      if(!['https:','http:'].includes(u.protocol))issues.push('Танҳо URL-и http ё https иҷозат аст.');
+      if(u.protocol==='http:')notes.push('HTTPS бехатартар аст.');
+      box.innerHTML=`<b>${issues.length?'⚠ Санҷиш':'✓ URL дуруст аст'}</b><br>${esc(u.href)}${notes.map(x=>'<br>⚠ '+esc(x)).join('')}`;
+    }catch{box.innerHTML='<b>✕ URL нодуруст аст.</b>';return}
+    return;
+  }
+  const paths=new Set(selectedFiles.map(f=>normalizeProjectPath(f.path)));
+  const start=normalizeProjectPath($('startPage')?.value||project.startPage||'index.html');
+  if(!selectedFiles.length)issues.push('Файлҳои сайт интихоб нашудаанд.');
+  if(!paths.has(start))issues.push('Саҳифаи оғоз ёфт нашуд: '+start);
+  const htmlFiles=selectedFiles.filter(f=>/\.html?$/i.test(f.path));
+  if(!htmlFiles.length)issues.push('Дар папка HTML нест.');
+  const total=selectedFiles.reduce((n,f)=>n+(f.size||0),0);
+  if(total>80*1024*1024)notes.push('Ҳаҷми сайт калон аст: '+(total/1048576).toFixed(1)+' MB.');
+  const missing=[];
+  for(const f of htmlFiles){
+    let source=''; try{source=new TextDecoder().decode(f.data)}catch{}
+    const re=/(?:src|href)\s*=\s*["']([^"'#]+)["']/gi; let m;
+    while((m=re.exec(source))){
+      const ref=m[1].trim();
+      if(/^(?:https?:|data:|blob:|mailto:|tel:|javascript:|\/\/)/i.test(ref))continue;
+      const clean=normalizeProjectPath(ref.split(/[?#]/)[0]);
+      if(!clean)continue;
+      const base=f.path.includes('/')?f.path.slice(0,f.path.lastIndexOf('/')+1):'';
+      const stack=[];
+      for(const part of normalizeProjectPath(base+clean).split('/')){
+        if(part==='..')stack.pop(); else if(part!=='.'&&part)stack.push(part);
+      }
+      const target=stack.join('/');
+      if(!paths.has(target))missing.push(f.path+' → '+ref);
+    }
+  }
+  const unique=[...new Set(missing)].slice(0,10);
+  if(unique.length)issues.push('Файлҳои пайвастшуда ёфт нашуданд: '+unique.join('; '));
+  const main=htmlFiles.find(f=>normalizeProjectPath(f.path)===start);
+  if(main){
+    const source=new TextDecoder().decode(main.data);
+    if(!/<meta[^>]+name=["']viewport["']/i.test(source))notes.push('Meta viewport нест; намуди мобилӣ метавонад нодуруст шавад.');
+    if(/http:\/\/[^"' ]+/i.test(source))notes.push('Дар HTML истиноди HTTP ҳаст; HTTPS истифода кун.');
+  }
+  box.innerHTML=`<b>${issues.length?'⚠ Мушкилот ёфт шуд':'✓ Санҷиши асосӣ гузашт'}</b><br>Файлҳо: ${selectedFiles.length} · Ҳаҷм: ${(total/1048576).toFixed(2)} MB`+
+    (issues.length?'<div style="color:#ff9aa8;margin-top:8px">'+issues.map(x=>'✕ '+esc(x)).join('<br>')+'</div>':'')+
+    (notes.length?'<div style="color:#f5d58c;margin-top:8px">'+notes.map(x=>'⚠ '+esc(x)).join('<br>')+'</div>':'')+
+    (!issues.length&&!notes.length?'<div style="color:#8af0c9;margin-top:8px">HTML ва роҳҳои асосии файлҳо санҷида шуданд.</div>':'');
+}
+
+let appPreviewUrls=[];
+function clearAppPreviewUrls(){for(const u of appPreviewUrls){try{URL.revokeObjectURL(u)}catch{}}appPreviewUrls=[]}
+function closeAppPreview(){
+  const modal=$('appPreviewModal'); if(modal)modal.style.display='none';
+  const frame=$('appPreviewFrame'); if(frame)frame.src='about:blank';
+  clearAppPreviewUrls();
+}
+function refreshAppPreview(){previewSelected(true)}
+async function previewSelected(isRefresh=false){
+  const modal=$('appPreviewModal'), frame=$('appPreviewFrame'), status=$('previewStatus');
+  if(!modal||!frame)return alert('Равзанаи пешнамоиш ёфт нашуд. Файлро аз нав кушо.');
+  const files=[...selectedFiles];
+  if(!files.length && htmlText){
+    const blob=new Blob([htmlText],{type:'text/html'});
+    files.push({path:'index.html',name:'index.html',type:'text/html',size:blob.size,data:await blob.arrayBuffer()});
+  }
+  if(!files.length)return alert('Аввал файли HTML ё папкаи сайтро интихоб кун.');
+  const normalize=p=>String(p||'').replace(/\\/g,'/').replace(/^\/+/,'');
+  const start=normalize($('startPage')?.value||project.startPage||'index.html');
+  const main=files.find(f=>normalize(f.path)===start) ||
+    files.find(f=>/(^|\/)index\.html?$/i.test(f.path)) ||
+    files.find(f=>/\.html?$/i.test(f.path));
+  if(!main)return alert('Файли HTML ёфт нашуд. index.html интихоб кун.');
+  let source=main.data instanceof ArrayBuffer?new TextDecoder().decode(main.data):
+    typeof main.data==='string'?main.data:new TextDecoder().decode(new Uint8Array(main.data));
+  const byPath=new Map(files.map(f=>[normalize(f.path),f]));
+  const mainPath=normalize(main.path);
+  const base=mainPath.includes('/')?mainPath.slice(0,mainPath.lastIndexOf('/')+1):'';
+  const resolveLocal=raw=>{
+    const clean=normalize(raw.split(/[?#]/)[0]);
+    const parts=(raw.startsWith('/')?[]:base).concat(clean).split('/');
+    const stack=[];
+    for(const part of parts){if(part==='..')stack.pop();else if(part&&part!=='.')stack.push(part)}
+    return stack.join('/');
+  };
+  const toDataUrl=async f=>{
+    const ext=f.name.split('.').pop().toLowerCase();
+    const mime=f.type||({css:'text/css',js:'text/javascript',png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',svg:'image/svg+xml',gif:'image/gif',webp:'image/webp',woff:'font/woff',woff2:'font/woff2'}[ext]||'application/octet-stream');
+    const bytes=f.data instanceof ArrayBuffer?new Uint8Array(f.data):f.data instanceof Uint8Array?f.data:new Uint8Array(await f.arrayBuffer());
+    let binary=''; for(let i=0;i<bytes.length;i+=32768)binary+=String.fromCharCode(...bytes.subarray(i,i+32768));
+    return `data:${mime};base64,${btoa(binary)}`;
+  };
+  const refs=[...source.matchAll(/(src|href)\s*=\s*(["'])([^"']+)\2/gi)];
+  for(const m of refs){
+    const raw=m[3].trim();
+    if(/^(?:https?:|data:|blob:|mailto:|tel:|javascript:|\/\/|#)/i.test(raw))continue;
+    const asset=byPath.get(resolveLocal(raw));
+    if(!asset)continue;
+    try{source=source.replace(m[0],`${m[1]}=${m[2]}${await toDataUrl(asset)}${m[2]}`)}catch(e){}
+  }
+  frame.srcdoc=source;
+  modal.style.display='flex';
+  status.textContent=`Пешнамоиш: ${main.path} · ${files.length} файл. Барои файлҳои беруна интернет лозим аст.`;
+}
+function editSelected(){if(htmlText)$('codeEditor').value=htmlText;show('editor')}
+function checkEditorHTML(){
+ const code=$('codeEditor').value||'', issues=[], notes=[];
+ const langText={tg:{ok:'Санҷиш анҷом ёфт. Хатои муҳим ёфт нашуд.',bad:'Мушкилот ёфт шуд:',empty:'Код холӣ аст.',html:'Теги <html> ёфт нашуд.',head:'Теги <head> нест.',body:'Теги <body> нест.',viewport:'Meta viewport нест — дар телефон андоза метавонад нодуруст шавад.',title:'Title нест.',tags:'Тегҳои эҳтимолан пӯшида нашуда:',js:'Хатои синтаксиси JavaScript:',local:'Истиноди файли маҳаллӣ шубҳанок аст:'},ru:{ok:'Проверка завершена. Критических ошибок не найдено.',bad:'Найдены проблемы:',empty:'Код пуст.',html:'Не найден тег <html>.',head:'Отсутствует <head>.',body:'Отсутствует <body>.',viewport:'Нет meta viewport — отображение на телефоне может быть неправильным.',title:'Нет title.',tags:'Возможно, не закрыты теги:',js:'Ошибка синтаксиса JavaScript:',local:'Подозрительная ссылка на локальный файл:'},en:{ok:'Check complete. No critical issues found.',bad:'Issues found:',empty:'The code is empty.',html:'Missing <html> tag.',head:'Missing <head> tag.',body:'Missing <body> tag.',viewport:'Missing meta viewport; mobile layout may be incorrect.',title:'Missing title.',tags:'Possibly unclosed tags:',js:'JavaScript syntax error:',local:'Suspicious local file reference:'}}[lang]||{};
+ if(!code.trim())issues.push(langText.empty);
+ if(!/<html\b/i.test(code))notes.push(langText.html);
+ if(!/<head\b/i.test(code))notes.push(langText.head);
+ if(!/<body\b/i.test(code))notes.push(langText.body);
+ if(!/<meta\b[^>]*name=["']viewport["']/i.test(code))notes.push(langText.viewport);
+ if(!/<title\b/i.test(code))notes.push(langText.title);
+ const voids=new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
+ const stack=[], re=/<\/?([a-z][\w:-]*)\b[^>]*>/gi; let m;
+ while((m=re.exec(code))){const raw=m[0],tag=m[1].toLowerCase();if(raw.startsWith('</')){const idx=stack.lastIndexOf(tag);if(idx>=0)stack.splice(idx,1)}else if(!voids.has(tag)&&!raw.endsWith('/>'))stack.push(tag)}
+ if(stack.length)notes.push(langText.tags+' '+[...new Set(stack)].slice(-8).join(', '));
+ const scripts=[...code.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)];
+ for(let i=0;i<scripts.length;i++){const js=scripts[i][1].trim();if(!js)continue;try{new Function(js)}catch(e){issues.push(langText.js+' '+e.message)}}
+ const refs=[...code.matchAll(/(?:src|href)=["']([^"']+)["']/gi)].map(x=>x[1]).filter(x=>x&&!/^(https?:|data:|#|mailto:|tel:|javascript:)/i.test(x));
+ for(const ref of [...new Set(refs)].slice(0,8))notes.push(langText.local+' '+ref+' (дар муҳаррир файлҳои ҳамроҳ санҷида намешаванд)');
+ const box=$('editorDiagnosticsText');box.innerHTML='';
+ const all=[...issues,...notes];
+ const heading=document.createElement('b');heading.textContent=all.length?langText.bad:langText.ok;box.appendChild(heading);
+ if(all.length){const ul=document.createElement('ul');all.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li)});box.appendChild(ul)}
+ const foot=document.createElement('small');foot.className='muted';foot.textContent=lang==='ru'?'Это предварительная проверка, не гарантия успешной сборки APK.':lang==='en'?'This is a preliminary check, not a guarantee that APK building will succeed.':'Ин санҷиши пешакӣ аст, кафолати муваффақ шудани APK нест.';box.appendChild(foot);
+ $('editorDiagnostics').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+let editorPreviewUrl='';function previewEditor(){let b=new Blob([$('codeEditor').value],{type:'text/html'});if(editorPreviewUrl)URL.revokeObjectURL(editorPreviewUrl);editorPreviewUrl=URL.createObjectURL(b);$('editorFrame').src=editorPreviewUrl}
+function setEditorViewport(mode){const frame=$('editorFrame');if(!frame)return;const box=$('editorPreviewBox');if(mode==='phone'){frame.style.width='390px';frame.style.maxWidth='100%';frame.style.height='680px';box.style.display='flex';box.style.justifyContent='center'}else if(mode==='tablet'){frame.style.width='768px';frame.style.maxWidth='100%';frame.style.height='680px';box.style.display='flex';box.style.justifyContent='center'}else{frame.style.width='100%';frame.style.maxWidth='100%';frame.style.height='520px';box.style.display='block'}previewEditor()}
+const EDITOR_DRAFT_KEY='hasanex-editor-draft-v1';let editorDraftTimer=null;
+function saveEditorDraft(){try{localStorage.setItem(EDITOR_DRAFT_KEY,$('codeEditor').value);const st=$('editorDraftStatus');if(st)st.textContent=lang==='ru'?'Черновик автоматически сохранён на этом устройстве.':lang==='en'?'Draft automatically saved on this device.':'Лоиҳаи муваққатӣ дар ҳамин дастгоҳ худкор захира шуд.'}catch(e){const st=$('editorDraftStatus');if(st)st.textContent='Хотира пур аст — файлро дастӣ зеркашӣ кун.'}}
+function restoreEditorDraft(){try{const d=localStorage.getItem(EDITOR_DRAFT_KEY);if(d&&d.length){$('codeEditor').value=d;return true}}catch(e){}return false}
+function backupAllProjects(){const list=readProjectIndex();if(!list.length)return alert('Ҳоло лоиҳае барои нусхабардорӣ нест.');const payload={format:'HASANEX_BACKUP',version:1,createdAt:new Date().toISOString(),projects:list};downloadText('HASANEX_ALL_PROJECTS_BACKUP.json',JSON.stringify(payload,null,2));}
+function useEditorCode(){htmlText=$('codeEditor').value;let blob=new Blob([htmlText],{type:'text/html'});let f={path:'index.html',name:'index.html',type:'text/html',size:blob.size,data:new TextEncoder().encode(htmlText).buffer};selectedFiles=selectedFiles.filter(x=>x.path!=='index.html');selectedFiles.unshift(f);alert('HTML ба лоиҳа илова шуд.');show('wizard')}
+
+// HASANEX 13.9 Multi-AI team: GPT-5, Gemini Cloud, Kimi, Manus, Claude and compatible APIs.
+const AI_PROVIDERS={
+ openai:{label:'OpenAI GPT-5',endpoint:'https://api.openai.com/v1/responses',note:'GPT-5 тавассути OpenAI Responses API. API key-и OpenAI лозим аст.'},
+ gemini:{label:'Google Gemini Cloud',endpoint:'https://generativelanguage.googleapis.com/v1beta/interactions',note:'Gemini Interactions API. Калиди Google AI Studio лозим аст; API-и Google Cloud Vertex AI аз backend/proxy ва OAuth-и серверӣ талаб мекунад.'},
+ kimi:{label:'Moonshot Kimi',endpoint:'https://api.moonshot.ai/v1/chat/completions',note:'Kimi тавассути Moonshot OpenAI-compatible Chat Completions API.'},
+ manus:{label:'Manus Agent',endpoint:'https://api.manus.ai/v2/task.create',note:'Manus API v2: вазифа оғоз мешавад ва HASANEX барои гирифтани ҷавоби агент ҳолатро месанҷад.'},
+ claude:{label:'Anthropic Claude',endpoint:'https://api.anthropic.com/v1/messages',note:'Claude Messages API. Баъзе браузерҳо пайвасти мустақимро бо CORS маҳдуд мекунанд; дар ин ҳолат proxy-и амн лозим аст.'},
+ custom:{label:'OpenAI-compatible',endpoint:'',note:'Барои DeepSeek, Qwen ё gateway-и дигар; endpoint ва model аз провайдер гирифта мешаванд.'}
+};
+function aiProviderChanged(){const id=$('aiProvider').value;$('aiProviderNote').textContent=AI_PROVIDERS[id]?.note||'';}
+function aiSetStatus(message,isError=false){const el=$('aiStatus');if(el){el.textContent=message;el.style.color=isError?'#ff8794':''}}
+function aiExtractHTML(text){let t=String(text||'').trim();t=t.replace(/^```(?:html)?\s*/i,'').replace(/```\s*$/,'').trim();const a=t.search(/<!doctype html|<html[\s>]/i);if(a>0)t=t.slice(a);return t}
+function aiReadText(data,provider){
+ if(provider==='openai'){if(data.output_text)return data.output_text;return (data.output||[]).flatMap(x=>x.content||[]).filter(x=>x.type==='output_text'||x.type==='text').map(x=>x.text||'').join('\n')}
+ if(provider==='gemini'){if(data.output_text)return data.output_text;return (data.steps||[]).filter(x=>x.type==='model_output').flatMap(x=>x.content||[]).filter(x=>x.type==='text').map(x=>x.text||'').join('\n')}
+ if(provider==='claude')return (data.content||[]).filter(x=>x.type==='text').map(x=>x.text||'').join('\n');
+ const c=data.choices?.[0]?.message?.content;
+ return typeof c==='string'?c:Array.isArray(c)?c.map(x=>x.text||'').join('\n'):'';
+}
+function aiConfig(id){
+ const key=$('aiKey-'+id)?.value.trim()||'';
+ const model=$('aiModel-'+id)?.value.trim()||'';
+ const endpoint=id==='custom'?($('aiEndpoint-custom')?.value.trim()||''):AI_PROVIDERS[id].endpoint;
+ return {id,key,model,endpoint};
+}
+function aiBuildInstructions(fix,code,prompt){
+ const system='You are a careful senior web programmer. Return ONLY a complete, self-contained, mobile-first HTML document. Put CSS and JavaScript inside the HTML. Make every button and feature functional, responsive and accessible. Avoid unnecessary external dependencies. Use Tajik for visible interface text unless requested otherwise. Never claim an APK has been built.';
+ const user=fix?'Repair and improve this existing HTML while preserving its intended features. Return the complete corrected HTML only.\n\n'+code:'Build the requested app/game as a complete, polished, single-file HTML document. User request: '+prompt+'\nReturn the whole HTML file, not an explanation.';
+ return {system,user};
+}
+async function aiFetchJson(url,options,timeoutMs=90000){
+ const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeoutMs);
+ try{const res=await fetch(url,{...options,signal:controller.signal});const data=await res.json().catch(()=>({}));
+  if(!res.ok){const msg=data.error?.message||data.error?.content||data.message||data.detail||('HTTP '+res.status);throw new Error(String(msg).slice(0,700))}
+  if(data.ok===false)throw new Error(data.error?.message||'API request failed');return data;
+ }catch(e){if(e.name==='AbortError')throw new Error('Вақти ҷавоб тамом шуд. Боз кӯшиш кун.');throw e}finally{clearTimeout(timer)}
+}
+async function aiRunProvider(id,prompt,fix,code){
+ const cfg=aiConfig(id);if(!cfg.key)throw new Error('API key ворид нашудааст');
+ const {system,user}=aiBuildInstructions(fix,code,prompt);let data,answer='';
+ if(id==='openai'){
+  if(!cfg.model)throw new Error('Номи GPT model холӣ аст');
+  data=await aiFetchJson(cfg.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+cfg.key},body:JSON.stringify({model:cfg.model,instructions:system,input:user,max_output_tokens:12000})});
+ }else if(id==='gemini'){
+  if(!cfg.model)throw new Error('Номи Gemini model холӣ аст');
+  data=await aiFetchJson(cfg.endpoint,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':cfg.key},body:JSON.stringify({model:cfg.model,input:system+'\n\n'+user,store:false})});
+ }else if(id==='kimi'){
+  if(!cfg.model)throw new Error('Номи Kimi model холӣ аст');
+  data=await aiFetchJson(cfg.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+cfg.key},body:JSON.stringify({model:cfg.model,messages:[{role:'system',content:system},{role:'user',content:user}],max_completion_tokens:12000})});
+ }else if(id==='claude'){
+  if(!cfg.model)throw new Error('Номи Claude model холӣ аст');
+  data=await aiFetchJson(cfg.endpoint,{method:'POST',headers:{'Content-Type':'application/json','x-api-key':cfg.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:cfg.model,max_tokens:12000,system,messages:[{role:'user',content:user}]})});
+ }else if(id==='custom'){
+  if(!/^https:\/\//i.test(cfg.endpoint))throw new Error('Custom endpoint бояд бо https:// оғоз шавад');
+  if(!cfg.model)throw new Error('Номи модели custom холӣ аст');
+  data=await aiFetchJson(cfg.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+cfg.key},body:JSON.stringify({model:cfg.model,messages:[{role:'system',content:system},{role:'user',content:user}],max_tokens:12000})});
+ }else if(id==='manus'){
+  const profile=cfg.model||'standard';
+  const task=await aiFetchJson(cfg.endpoint,{method:'POST',headers:{'Content-Type':'application/json','x-manus-api-key':cfg.key},timeoutMs:90000,body:JSON.stringify({message:{content:[{type:'text',text:system+'\n\n'+user+'\n\nReturn the complete HTML code in your final assistant message. Do not only create a hosted website or describe the steps.'}]},agent_profile:profile,locale:'tg',interactive_mode:false,share_visibility:'private',title:'HASANEX — сохтани HTML'})});
+  if(!task.task_id)throw new Error('Manus task_id нафиристод');
+  const base='https://api.manus.ai/v2/task.listMessages';let finalText='',agentStatus='running';
+  for(let attempt=0;attempt<45;attempt++){
+   await new Promise(r=>setTimeout(r,2500));
+   const q=base+'?task_id='+encodeURIComponent(task.task_id)+'&order=asc&limit=100';
+   const poll=await aiFetchJson(q,{method:'GET',headers:{'x-manus-api-key':cfg.key}},35000);
+   const msgs=poll.messages||[];
+   const status=msgs.filter(m=>m.type==='status_update').map(m=>m.status_update?.agent_status).filter(Boolean).pop();
+   if(status)agentStatus=status;
+   const assistant=msgs.filter(m=>m.type==='assistant_message'&&m.assistant_message?.content);
+   const completed=assistant.filter(m=>m.assistant_message?.delivery_kind!=='progress');
+   const candidate=completed.length?completed:assistant;
+   if(candidate.length)finalText=candidate.map(m=>m.assistant_message.content).join('\n\n');
+   const error=msgs.filter(m=>m.type==='error_message').map(m=>m.error_message?.content).filter(Boolean).pop();
+   if(error)throw new Error('Manus: '+error);
+   if(agentStatus==='error')throw new Error('Manus вазифаро бо хато қатъ кард');
+   if(agentStatus==='stopped')break;
+   if(agentStatus==='waiting')throw new Error('Manus интизори тасдиқ/маълумоти иловагӣ аст. Вазифа: '+(task.task_url||'ба Manus гузар'));
+  }
+  if(!finalText)throw new Error('Manus ҳанӯз ҷавоби HTML надод. Вазифаро аз ин пайванд бин: '+(task.task_url||'Manus'));
+  answer=finalText;
+ }
+ if(id!=='manus')answer=aiReadText(data,id);
+ if(!answer||!String(answer).trim())throw new Error('Ҷавоби модел холӣ аст');
+ const html=aiExtractHTML(answer);
+ if(!/<(?:!doctype\s+html|html|head|body|div|main|style|script)\b/i.test(html))throw new Error('Ҷавоб HTML-и пурра нест. Моделро дубора иҷро кун.');
+ return html;
+}
+function aiAddResultCard(id,status,html,error){
+ const wrap=$('aiMultiResults');const card=document.createElement('div');card.className='ai-result-card';card.id='aiResult-'+id;
+ const title=document.createElement('h3');title.textContent=(AI_PROVIDERS[id]?.label||id)+' — '+(error?'ХАТО':'ТАЙЁР');card.appendChild(title);
+ const statusEl=document.createElement('div');statusEl.className='ai-status-line';statusEl.textContent=error?('⚠ '+error):('✅ HTML гирифта шуд · '+html.length.toLocaleString()+' аломат');card.appendChild(statusEl);
+ if(html){const ta=document.createElement('textarea');ta.readOnly=true;ta.spellcheck=false;ta.value=html;ta.setAttribute('aria-label','HTML аз '+AI_PROVIDERS[id].label);card.appendChild(ta);const row=document.createElement('div');row.className='row';const use=document.createElement('button');use.className='btn';use.textContent='✅ Истифодаи ин HTML';use.onclick=()=>aiUseTeamResult(id);row.appendChild(use);const dl=document.createElement('button');dl.className='btn secondary';dl.textContent='⬇ HTML';dl.onclick=()=>downloadText('hasanex-'+id+'.html',html);row.appendChild(dl);card.appendChild(row)}
+ wrap.appendChild(card);
+}
+function aiUseTeamResult(id){const ta=$('aiResult-'+id)?.querySelector('textarea');if(!ta||!ta.value)return; $('aiOutput').value=ta.value;aiPreview();aiSetStatus('✅ Натиҷаи '+AI_PROVIDERS[id].label+' интихоб шуд. Акнун метавонӣ таҳрир ё APK/ZIP омода кунӣ.')}
+const AI_TASKS={
+ create:{tg:'ИИ талаботро мефаҳмад, сохтор месозад, HTML/CSS/JS менависад ва натиҷаро барои пешнамоиш медиҳад.',ru:'ИИ анализирует требования, проектирует структуру, пишет HTML/CSS/JS и готовит результат для предпросмотра.',en:'The AI analyzes requirements, designs the structure, writes HTML/CSS/JS, and prepares a preview.'},
+ fix:{tg:'ИИ коди мавҷударо таҳлил мекунад, хатогиҳоро ислоҳ мекунад ва функсияҳои вайроншударо нигоҳ медорад.',ru:'ИИ анализирует существующий код, исправляет ошибки и сохраняет рабочие функции.',en:'The AI analyzes existing code, fixes errors, and preserves working features.'},
+ review:{tg:'ИИ кодро аз рӯйи хатогиҳо, амният, дастрасӣ, мутобиқат ва кори тугмаҳо месанҷад.',ru:'ИИ проверяет код на ошибки, безопасность, доступность, совместимость и работу кнопок.',en:'The AI checks errors, security, accessibility, compatibility, and button behavior.'},
+ design:{tg:'ИИ тарҳ, рангҳо, ҷойгиршавӣ, мутобиқшавӣ ба телефон ва осонии истифода را беҳтар мекунад.',ru:'ИИ улучшает дизайн, цвета, расположение элементов, адаптацию к телефону и удобство.',en:'The AI improves visual design, colors, layout, mobile responsiveness, and usability.'},
+ explain:{tg:'ИИ сохтори код ва вазифаи қисмҳоро бо забони сода мефаҳмонад.',ru:'ИИ простым языком объясняет структуру кода и назначение его частей.',en:'The AI explains the code structure and what each part does in plain language.'},
+ translate:{tg:'ИИ матнҳои интерфейсро ба тоҷикӣ, русӣ ва англисӣ тарҷума карда, функсияи ивазкунии забонро месанҷад.',ru:'ИИ переводит интерфейс на таджикский, русский и английский и проверяет переключение языков.',en:'The AI translates the interface into Tajik, Russian, and English and checks language switching.'},
+ optimize:{tg:'ИИ суръат, андоза, сохтори CSS/JS ва истифодаи хотираро беҳтар мекунад.',ru:'ИИ улучшает скорость, размер, структуру CSS/JS и использование памяти.',en:'The AI improves speed, size, CSS/JS structure, and memory usage.'}
+};
+function updateAITaskHelp(){const mode=$('aiTaskMode')?.value||'create';const v=AI_TASKS[mode];if($('aiTaskHelp')&&v)$('aiTaskHelp').textContent=v[lang]||v.tg;}
+$('aiTaskMode')?.addEventListener('change',updateAITaskHelp);
+function runOfflineHelper(){
+ const prompt=$('aiPrompt').value.trim();const task=$('aiTaskMode')?.value||'create';
+ if(!prompt)return aiSetStatus(lang==='ru'?'Сначала опишите, что нужно сделать.':lang==='en'?'First describe what you want to build.':'Аввал навис, ки чӣ сохтан мехоҳӣ.',true);
+ const safe=prompt.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const title=lang==='ru'?'Моё приложение':lang==='en'?'My app':'Барномаи ман';
+ const heading=lang==='ru'?'Привет! Приложение готово к настройке.':lang==='en'?'Hello! Your app is ready to customize.':'Салом! Барномаи ту барои таҳрир омода аст.';
+ const label=lang==='ru'?'Задача':lang==='en'?'Your request':'Дархости ту';
+ const html='<!doctype html>\n<html lang="'+lang+'">\n<head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+title+'</title>\n<style>body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;box-sizing:border-box;font-family:system-ui,Arial;background:linear-gradient(135deg,#0b1220,#172d48);color:#f5f8ff}.card{width:min(100%,560px);padding:28px;border:1px solid #3c5877;border-radius:24px;background:#111d2e;box-shadow:0 20px 60px #0005}h1{margin-top:0;color:#73c7ff}p{line-height:1.7;color:#d4e2f2}.request{padding:14px;border-radius:14px;background:#1c2d43;overflow-wrap:anywhere}button{padding:13px 18px;border:0;border-radius:12px;background:#1598ed;color:white;font-weight:700}</style>\n</head><body><main class="card"><h1>'+heading+'</h1><p><b>'+label+':</b></p><div class="request">'+safe+'</div><p>'+ (lang==='ru'?'Это стартовый шаблон без подключения облачного ИИ.':lang==='en'?'This is a starter template without cloud AI.':'Ин қолаби ибтидоӣ бе пайвасти ИИ-и абрӣ аст.') +'</p><button onclick="alert('+JSON.stringify(lang==='ru'?'Работает!':lang==='en'?'It works!':'Кор мекунад!')+')">'+(lang==='ru'?'Проверить':lang==='en'?'Test':'Санҷидан')+'</button></main></body></html>';
+ $('aiOutput').value=html;aiPreview();aiSetStatus(lang==='ru'?'Готов стартовый шаблон. Это не облачная генерация ИИ; для сложной реализации подключите API.':lang==='en'?'Starter template created. This is not cloud AI generation; connect an API for full AI implementation.':'Қолаби ибтидоӣ сохта шуд. Ин тавлиди абрии ИИ нест; барои сохтани пурраи AI API пайваст кун.');
+}
+async function runAIProgrammer(fix=false){
+ const userPrompt=$('aiPrompt').value.trim(),code=$('aiOutput').value.trim(),id=$('aiProvider').value,task=$('aiTaskMode')?.value||'create';
+ const taskInstruction={create:'СОЗДАНИЕ: создай полноценное приложение по требованиям.',fix:'ИСПРАВЛЕНИЕ: найди и исправь ошибки, сохрани существующие функции.',review:'АУДИТ: проверь качество, безопасность, доступность и работу всех элементов; исправь проблемы.',design:'ДИЗАЙН: улучши визуальный стиль, UX и мобильную адаптацию без потери функций.',explain:'ОБЪЯСНЕНИЕ: добавь понятные комментарии и пояснения к структуре кода.',translate:'ПЕРЕВОД: реализуй полный переключатель таджикский/русский/английский для всех видимых текстов.',optimize:'ОПТИМИЗАЦИЯ: улучши производительность и структуру без изменения поведения.'}[task]||'';
+ const prompt=(task==='create'?'':taskInstruction+'\n\n')+userPrompt;
+ if(!prompt&&!fix)return aiSetStatus('Аввал навис, ки чӣ сохтан мехоҳӣ.',true);
+ if(fix&&!code)return aiSetStatus('Аввал HTML соз ё ба натиҷа гузор.',true);
+ const cfg=aiConfig(id);if(!cfg.key)return aiSetStatus('API key-и '+AI_PROVIDERS[id].label+'-ро пур кун.',true);
+ const btn=$('aiGenerateBtn');btn.disabled=true;aiSetStatus('⏳ '+AI_PROVIDERS[id].label+' кор карда истодааст...');
+ try{const html=await aiRunProvider(id,prompt,fix,code);$('aiOutput').value=html;aiPreview();aiSetStatus('✅ '+AI_PROVIDERS[id].label+' HTML-ро омода кард. Пешнамоиш кун ва санҷ.');}
+ catch(e){aiSetStatus('Хато дар '+AI_PROVIDERS[id].label+': '+(e.message||e)+'. Калид, модели дастрас ва CORS/Proxy-ро санҷ.',true)}finally{btn.disabled=false}
+}
+async function runAIAll(fix=false){
+ const rawPrompt=$('aiPrompt').value.trim(),code=$('aiOutput').value.trim(),task=$('aiTaskMode')?.value||'create';
+ const taskInstruction={create:'Создай полноценное приложение по требованиям.',fix:'Исправь ошибки, сохрани все работающие функции.',review:'Проведи аудит ошибок, безопасности, доступности и функциональности.',design:'Улучши дизайн, UX и мобильную адаптацию.',explain:'Поясни структуру и назначение кода.',translate:'Полностью переведи весь интерфейс на таджикский, русский и английский.',optimize:'Оптимизируй производительность и структуру.'}[task]||'';const prompt=(task==='create'?'':taskInstruction+'\n\n')+rawPrompt;
+ if(!prompt&&!fix)return aiSetStatus('Аввал навис, ки чӣ сохтан мехоҳӣ.',true);
+ if(fix&&!code)return aiSetStatus('Аввал HTML соз ё ворид кун, баъд агентҳо онро ислоҳ мекунанд.',true);
+ const ids=['openai','gemini','kimi','manus','claude','custom'].filter(id=>$('aiUse-'+id)?.checked);
+ if(!ids.length)return aiSetStatus('Ҳадди ақал як ИИ-ро интихоб кун.',true);
+ const ready=ids.filter(id=>aiConfig(id).key),missing=ids.filter(id=>!aiConfig(id).key);
+ if(!ready.length)return aiSetStatus('Барои оғози кори воқеии агентҳо API key-и ақаллан як провайдер лозим аст. Калидро дар ҳамин саҳифа ворид кун.',true);
+ const wrap=$('aiMultiResults');wrap.replaceChildren();
+ missing.forEach(id=>aiAddResultCard(id,'','','API key нест — ин агент гузаронда шуд'));
+ const btn=$('aiTeamBtn'),single=$('aiGenerateBtn');btn.disabled=true;single.disabled=true;
+ const roles={openai:'ТУ РОҲБАРИ МЕЪМОРӢ ҲАСТӢ: сохтор, UX, талабот ва тарҳи беҳтаринро ба код табдил деҳ.',gemini:'ТУ МУТАХАССИСИ UX ВА МОБИЛӢ ҲАСТӢ: мутобиқшавӣ ба телефон, дастрасӣ, суръат ва таҷрибаи истифодабарандаро беҳтар кун.',kimi:'ТУ РУШДДИҲАНДАИ АСОСӢ ҲАСТӢ: JavaScript-и устувор, ҳамаи тугмаҳо ва функсияҳои коркунандаро амалӣ кун.',manus:'ТУ АГЕНТИ ИҶРОӢ ҲАСТӢ: талаботро ба як барномаи пурра табдил деҳ; ҷараёни истифода ва ҳолатҳои хатогиро фаро гир.',claude:'ТУ МУҲАНДИСИ СИФАТ ҲАСТӢ: соддагӣ, амният, нигоҳдорӣ, дастрасӣ ва сифати кодро санҷида беҳтар кун.',custom:'ТУ МУТАХАССИСИ ТЕХНИКӢ ҲАСТӢ: камбудиҳои мантиқӣ ва ҳолатҳои канориро пешбинӣ кун.'};
+ aiSetStatus('🤝 Марҳилаи 1/2: '+ready.length+' агент вазифаҳоро ҳамзамон иҷро мекунанд...');
+ const results=await Promise.allSettled(ready.map(async id=>({id,html:await aiRunProvider(id,(fix?'ВАЗИФА: HTML-и мавҷударо ислоҳ кун. ':'ВАЗИФАИ ИСТИФОДАБАРАНДА: ')+prompt+'\n\nНАҚШИ ТУ: '+roles[id]+'\nҲамчун узви даста, мустақилона таҳлилу иҷро кун. Бо вуҷуди нақш, натиҷа бояд HTML-и пурра, ягона ва коршоям бошад.',fix,code)})));
+ const good=[];let ok=0;
+ results.forEach((res,i)=>{const id=ready[i];if(res.status==='fulfilled'){ok++;good.push({id,html:res.value.html});aiAddResultCard(id,'',res.value.html,'')}else aiAddResultCard(id,'','',res.reason?.message||'Хатои номаълум')});
+ if(!good.length){aiSetStatus('Ҳеҷ агент натиҷаи дуруст надод. Калид, модели дастрас ва CORS/Proxy-ро санҷ.',true);btn.disabled=false;single.disabled=false;return}
+ // The first successful non-Manus provider becomes the lead/coordinator. If only Manus succeeded, use its draft directly.
+ const lead=good.find(x=>x.id!=='manus')||good[0];
+ if(good.length===1){$('aiOutput').value=good[0].html;aiPreview();aiSetStatus('Марҳилаи 1/2 анҷом ёфт: 1 агент натиҷа дод. Барои санҷиш натиҷаи агентро истифода бар.');}
+ else {
+  aiSetStatus('🧠 Марҳилаи 2/2: '+AI_PROVIDERS[lead.id].label+' ҷавобҳои '+good.length+' агентро муқоиса карда, версияи ниҳоиро ҷамъ мекунад...');
+  const drafts=good.map((x,i)=>'\n\n--- DRAFT '+(i+1)+' FROM '+AI_PROVIDERS[x.id].label+' ---\n'+x.html.slice(0,18000)).join('');
+  const synthesisPrompt='ТУ АГЕНТИ РОҲБАРИ HASANEX ҲАСТӢ. Якчанд агент барои як вазифа натиҷа доданд. Онҳоро муқоиса кун, хусусиятҳои муфидро муттаҳид кун, зиддиятҳоро ҳал кун, хатогиҳои эҳтимолиро ислоҳ кун ва ЯК HTML-и ниҳоии мукаммал соз. Нусхаҳоро кӯр-кӯрона часпон накун. Ҳамаи талаботи аслиро нигоҳ дор. Ҷавоб танҳо як HTML-и пурра бошад, бе шарҳ.\n\nТАЛАБОТИ ИСТИФОДАБАРАНДА: '+prompt+'\n\n'+(fix?'HTML-и аслӣ барои ислоҳ буд. ':'')+'НАТИҶАҲОИ АГЕНТҲО:'+drafts;
+  try{const finalHtml=await aiRunProvider(lead.id,synthesisPrompt,false,'');$('aiOutput').value=finalHtml;aiPreview();aiSetStatus('✅ Agent Team анҷом ёфт: '+ok+'/'+ready.length+' агент натиҷа доданд; '+AI_PROVIDERS[lead.id].label+' ҷавобҳоро ҷамъ карда, HTML-и ниҳоиро сохт. Пешнамоиш ва санҷиши дастиро фаромӯш накун.');}
+  catch(e){const best=good.slice().sort((a,b)=>b.html.length-a.html.length)[0];$('aiOutput').value=best.html;aiPreview();aiSetStatus('⚠ '+ok+' агент ҷавоб доданд, аммо ҷамъбасти роҳбар ноком шуд. Натиҷаи '+AI_PROVIDERS[best.id].label+' гузошта шуд. Сабаб: '+(e.message||e),true)}
+ }
+ btn.disabled=false;single.disabled=false;
+}
+function aiFixCode(){runAIProgrammer(true)}
+function aiPreview(){const code=$('aiOutput').value.trim();if(!code)return aiSetStatus('Аввал HTML соз ё ворид кун.',true);$('aiFrame').srcdoc=code;aiSetStatus('Пешнамоиш нав карда шуд.')}
+function aiToEditor(){const code=$('aiOutput').value.trim();if(!code)return aiSetStatus('Аввал HTML соз.',true);$('codeEditor').value=code;show('editor')}
+function aiDownloadHTML(){const code=$('aiOutput').value.trim();if(!code)return aiSetStatus('Аввал HTML соз.',true);downloadText('hasanex-ai-app.html',code)}
+function aiToAPK(){const code=$('aiOutput').value.trim();if(!code)return aiSetStatus('Аввал HTML соз.',true);startWizard('advanced');$('codeEditor').value=code;useEditorCode();aiSetStatus('HTML ба устоди сохтани APK илова шуд. Қадамҳоро пур карда, дар охир APK соз.')}
+
+function downloadText(name,text){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)}
+$('pdfInput').onchange=e=>{let f=e.target.files[0];if(!f)return;if(pdfUrl)URL.revokeObjectURL(pdfUrl);pdfUrl=URL.createObjectURL(f);$('pdfFrame').src=pdfUrl;$('pdfName').textContent=f.name;show('pdf')};
+async function loadIcon(e){let f=e.target.files[0];if(!f)return;if(f.size>8*1024*1024)return alert('Нишона бояд аз 8 MB хурд бошад.');try{let bmp=await createImageBitmap(f),c=document.createElement('canvas');c.width=c.height=512;let x=c.getContext('2d');x.fillStyle=project.accent||'#168df0';x.beginPath();x.roundRect(0,0,512,512,92);x.fill();let scale=Math.min(440/bmp.width,440/bmp.height);x.drawImage(bmp,(512-bmp.width*scale)/2,(512-bmp.height*scale)/2,bmp.width*scale,bmp.height*scale);let blob=await new Promise(r=>c.toBlob(r,'image/png'));project.iconPng=new Uint8Array(await blob.arrayBuffer());project.icon='🖼️';renderStep()}catch(err){alert('Ин тасвир кушода нашуд. PNG ё JPG-и дигар интихоб кун.')}}
+async function makeEmojiIcon(){
+ if(project.iconPng)return project.iconPng instanceof Uint8Array?project.iconPng:new Uint8Array(project.iconPng);
+ const c=document.createElement('canvas');c.width=c.height=512;const x=c.getContext('2d');if(!x)throw new Error('Canvas дар браузер дастрас нест');
+ x.fillStyle=project.accent||'#168df0';x.beginPath();
+ if(typeof x.roundRect==='function')x.roundRect(0,0,512,512,96);else{x.moveTo(96,0);x.lineTo(416,0);x.quadraticCurveTo(512,0,512,96);x.lineTo(512,416);x.quadraticCurveTo(512,512,416,512);x.lineTo(96,512);x.quadraticCurveTo(0,512,0,416);x.lineTo(0,96);x.quadraticCurveTo(0,0,96,0)}x.fill();
+ x.textAlign='center';x.textBaseline='middle';x.font='300px system-ui, Apple Color Emoji, Noto Color Emoji';x.fillText(project.icon||'🚀',256,265);
+ const b=await new Promise((resolve,reject)=>{try{c.toBlob(v=>v?resolve(v):reject(new Error('Нишонаи PNG сохта нашуд')),'image/png')}catch(e){reject(e)}});return new Uint8Array(await b.arrayBuffer())
+}
+function renderSummary(){let html=`<div class="fileitem"><b>App name</b><span>${esc(project.name)}</span></div><div class="fileitem"><b>Package ID</b><span>${esc(project.package)}</span></div><div class="fileitem"><b>Content files</b><span>${selectedFiles.length}</span></div><div class="fileitem"><b>Theme / accent</b><span>${esc(project.theme)} · ${project.accent}</span></div><div class="fileitem"><b>Permissions</b><span>${project.permissions.length}</span></div><div class="fileitem"><b>Build</b><span>${esc(project.buildType||'debug').toUpperCase()}</span></div>`;$('reviewSummary').innerHTML=html}
+// Durable project storage: IndexedDB keeps original website files and custom icons.
+const PROJECT_DB='hasanex_html_apk_db',PROJECT_STORE='projects';
+function openProjectDB(){return new Promise((resolve,reject)=>{if(!('indexedDB' in window))return reject(new Error('IndexedDB дастрас нест'));let q=indexedDB.open(PROJECT_DB,1);q.onupgradeneeded=()=>{if(!q.result.objectStoreNames.contains(PROJECT_STORE))q.result.createObjectStore(PROJECT_STORE,{keyPath:'id'})};q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)})}
+async function dbPut(record){let db=await openProjectDB();return new Promise((resolve,reject)=>{let tx=db.transaction(PROJECT_STORE,'readwrite');tx.objectStore(PROJECT_STORE).put(record);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)}})}
+async function dbGet(id){let db=await openProjectDB();return new Promise((resolve,reject)=>{let q=db.transaction(PROJECT_STORE,'readonly').objectStore(PROJECT_STORE).get(id);q.onsuccess=()=>{db.close();resolve(q.result)};q.onerror=()=>{db.close();reject(q.error)}})}
+async function dbDelete(id){let db=await openProjectDB();return new Promise((resolve,reject)=>{let tx=db.transaction(PROJECT_STORE,'readwrite');tx.objectStore(PROJECT_STORE).delete(id);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)}})}
+// Resilient project index: recover gracefully if browser storage is unavailable or corrupted.
+function readProjectIndex(){try{const raw=localStorage.getItem('apkProjects');if(!raw)return [];const parsed=JSON.parse(raw);return Array.isArray(parsed)?parsed:[]}catch(e){console.warn('Project index could not be read:',e);return []}}
+function writeProjectIndex(list){if(!Array.isArray(list))throw new Error('Рӯйхати лоиҳаҳо нодуруст аст');try{localStorage.setItem('apkProjects',JSON.stringify(list));return true}catch(e){console.warn('Project index could not be written:',e);return false}}
+async function saveProject(silent=false){try{let data=serializeProject();data.id=data.id||('p_'+Date.now()+'_'+Math.random().toString(36).slice(2,8));data.iconPng=project.iconPng?new Uint8Array(project.iconPng):null;let fullFiles=[];for(const f of selectedFiles){let bytes=f.data instanceof Uint8Array?f.data:f.data instanceof ArrayBuffer?new Uint8Array(f.data):new Uint8Array(await f.arrayBuffer());fullFiles.push({path:f.path,name:f.name,type:f.type||'',size:f.size||bytes.byteLength,data:bytes})}await dbPut({id:data.id,project:data,files:fullFiles});let list=readProjectIndex();list=list.filter(x=>x.id!==data.id&&x.package!==data.package);list.unshift({...data,iconPng:null});writeProjectIndex(list);project.id=data.id;if(!silent)alert('✅ Лоиҳа, ҳамаи файлҳои сайт ва нишонаи он дар хотираи телефон захира шуданд.');renderSummary();renderRecent();return true}catch(e){console.error(e);if(!silent)alert('Захира нашуд: '+(e.message||'хатои хотира'));return false}}
+function serializeProject(){let p={...project,iconPng:null,files:selectedFiles.map(f=>({path:f.path,name:f.name,type:f.type,size:f.size})),htmlText:htmlText||'',savedAt:new Date().toISOString()};delete p.iconFile;return p}
+function renderProjects(){let list=readProjectIndex();$('projectList').innerHTML=list.length?list.map((p,i)=>`<div class="panel"><div class="row"><div><h3>${esc(p.name)}</h3><small class="muted">${esc(p.package)} · ${new Date(p.savedAt).toLocaleDateString()}</small></div><span class="tag">${p.files?.length||0} files</span></div><div class="row" style="margin-top:10px"><button class="btn secondary" onclick="loadSaved(${i})">Open</button><button class="btn ghost" onclick="exportSaved(${i})">Export JSON</button><button class="btn danger" onclick="deleteSaved(${i})">Delete</button></div></div>`).join(''):'<div class="panel muted">Лоиҳа ҳоло нест. Аз «Лоиҳаи нав» оғоз кун.</div>'}
+function renderRecent(){let list=readProjectIndex();$('recentBox').innerHTML=list.length?`<b>${esc(list[0].name)}</b><p class="muted">${esc(list[0].package)}</p><button class="btn secondary" onclick="show('projects')">Кушодан</button>`:'Ҳоло лоиҳа захира нашудааст.'}
+async function loadSaved(i){let p=readProjectIndex()[i];if(!p)return;try{let full=p.id?await dbGet(p.id):null;if(full){project={...full.project};selectedFiles=(full.files||[]).map(f=>({...f,data:f.data instanceof Uint8Array?f.data:new Uint8Array(f.data)}));project.iconPng=full.project.iconPng?new Uint8Array(full.project.iconPng):null;htmlText=project.htmlText||'';alert('✅ Лоиҳа пурра барқарор шуд: файлҳои сайт ва нишона ҳам ҳастанд.')}else{project=p;htmlText=p.htmlText||'';selectedFiles=[];project.iconPng=null;alert('Ин лоиҳаи кӯҳна аст. Танзимот барқарор шуд, аммо файлҳои аслӣ дар нусхаи кӯҳна сабт нашуда буданд.')}step=0;renderStep();show('wizard')}catch(e){alert('Лоиҳа кушода нашуд: '+e.message)}}
+async function deleteSaved(i){let a=readProjectIndex(),p=a[i];if(p?.id)try{await dbDelete(p.id)}catch(e){}a.splice(i,1);writeProjectIndex(a);renderProjects();renderRecent()}
+async function exportSaved(i){let p=readProjectIndex()[i];if(!p)return;let full=p.id?await dbGet(p.id):null;if(full){full.files=full.files.map(f=>{let b=f.data instanceof Uint8Array?f.data:new Uint8Array(f.data),bin='';for(let j=0;j<b.length;j+=32768)bin+=String.fromCharCode(...b.subarray(j,j+32768));return {...f,dataBase64:btoa(bin),data:undefined}});if(full.project.iconPng){let b=new Uint8Array(full.project.iconPng),bin='';for(let j=0;j<b.length;j+=32768)bin+=String.fromCharCode(...b.subarray(j,j+32768));full.project.iconPngBase64=btoa(bin);full.project.iconPng=null}p={...full.project,_backup:{files:full.files}}}downloadText((p.name||'project')+'.json',JSON.stringify(p,null,2))}
+function importProject(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let p=JSON.parse(r.result);let incoming=p&&p.format==='HASANEX_BACKUP'&&Array.isArray(p.projects)?p.projects:[p];if(!incoming.length||incoming.some(x=>!x||typeof x!=='object'||!x.name))throw Error('bad');let a=readProjectIndex();for(const item of incoming){item.id=item.id||('import_'+Date.now()+'_'+Math.random().toString(36).slice(2,7));a.unshift(item)}writeProjectIndex(a);renderProjects();alert('Нусха ворид шуд. Барои лоиҳаҳои пуррае, ки файлҳои аслӣ доранд, аз содироти алоҳидаи ҳар лоиҳа истифода кун.')}catch{alert('JSON ё нусхаи HASANEX нодуруст аст.')}};r.readAsText(f);e.target.value=''}
+// Minimal ZIP writer (STORE method), so project ZIP is created locally without a library.
+function crc32(buf){let c=~0;for(let i=0;i<buf.length;i++){c^=buf[i];for(let j=0;j<8;j++)c=(c>>>1)^((c&1)?0xedb88320:0)}return (~c)>>>0}
+function zipStore(files){
+ const enc=new TextEncoder(),local=[],central=[];let offset=0;const seen=new Set();
+ const u16=n=>new Uint8Array([n&255,(n>>>8)&255]);
+ const u32=n=>new Uint8Array([n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255]);
+ const join=parts=>{let len=parts.reduce((n,p)=>n+p.length,0),out=new Uint8Array(len),at=0;for(const part of parts){out.set(part,at);at+=part.length}return out};
+ for(const f of files){
+  const safeName=normalizeProjectPath(f.name);if(!safeName||safeName.split('/').some(x=>!x||x==='.'||x==='..'))throw new Error('Роҳи файл нодуруст аст: '+f.name);if(seen.has(safeName))throw new Error('Файли такрорӣ: '+safeName);seen.add(safeName);const name=enc.encode(safeName),data=f.data instanceof Uint8Array?f.data:new Uint8Array(f.data instanceof ArrayBuffer?f.data:enc.encode(String(f.data)));
+  if(name.length>65535||data.length>0xffffffff)throw new Error('Файл барои ZIP хеле калон аст: '+f.name);
+  const crc=crc32(data);
+  const lh=join([u32(0x04034b50),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0),name,data]);
+  local.push(lh);
+  const ch=join([u32(0x02014b50),u16(20),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(offset),name]);
+  central.push(ch);offset+=lh.length;
+  if(offset>0xffffffff)throw new Error('Ҳаҷми ZIP аз ҳад зиёд аст.');
+ }
+ if(files.length>65535)throw new Error('Шумораи файлҳо аз ҳад зиёд аст.');
+ const csize=central.reduce((a,b)=>a+b.length,0);
+ const end=join([u32(0x06054b50),u16(0),u16(0),u16(files.length),u16(files.length),u32(csize),u32(offset),u16(0)]);
+ return new Blob([...local,...central,end],{type:'application/zip'});
+}
+let hasanexApkBlobUrl='';
+async function buildApkServer(){
+  if(!collectStep())return;
+  const log=$('buildLog');
+  const endpoint=String($('buildApiUrl')?.value||'').trim().replace(/\/+$/,'');
+  if(!endpoint){alert(lang==='ru'?'Сначала укажите адрес APK-сервера.':lang==='en'?'Enter your APK server URL first.':'Аввал суроғаи сервери APK-ро ворид кун.');return;}
+  try{const u=new URL(endpoint);if(!['https:','http:'].includes(u.protocol))throw new Error('URL must use HTTPS.');if(u.protocol==='http:'&&!['localhost','127.0.0.1'].includes(u.hostname))throw new Error('Барои сервери беруна HTTPS лозим аст.');}
+  catch(e){alert(e.message||'URL-и сервер нодуруст аст.');return;}
+  try{localStorage.setItem('hasanex-build-api',endpoint)}catch(e){}
+  const button=document.querySelector('button[onclick="buildApkServer()"]');if(button){button.disabled=true;button.textContent=lang==='ru'?'⏳ СОБИРАЕМ APK…':lang==='en'?'⏳ BUILDING APK…':'⏳ APK СОХТА ШУДА ИСТОДААСТ…';}
+  log.textContent=lang==='ru'?'1/3 Подготовка файлов…':lang==='en'?'1/3 Preparing project files…':'1/3 Файлҳои лоиҳа омода мешаванд…';
+  try{
+    const form=new FormData();
+    const meta={name:project.name,package:project.package,version:project.version,versionCode:project.versionCode,minSdk:project.minSdk,contentType:project.contentType,url:project.url,startPage:project.startPage,theme:project.theme,accent:project.accent,orientation:project.orientation,fullscreen:!!project.fullscreen,permissions:project.permissions||[],splash:!!project.splash,splashText:project.splashText||'',js:project.js!==false,dom:project.dom!==false,zoom:project.zoom!==false,downloads:project.downloads!==false,keepScreenOn:!!project.keepScreenOn,desktopMode:!!project.desktopMode,external:project.external!==false};
+    form.append('meta',JSON.stringify(meta));
+    if(project.contentType!=='url'){
+      if(!selectedFiles.length)throw new Error('Аввал HTML ё папкаи сайтро интихоб кун.');
+      for(const f of selectedFiles){const bytes=f.data instanceof Uint8Array?f.data:new Uint8Array(f.data);form.append('paths',f.path);form.append('files',new Blob([bytes],{type:f.type||'application/octet-stream'}),'asset.bin');}
+    }
+    const icon=await makeEmojiIcon();form.append('icon',new Blob([icon],{type:'image/png'}),'icon.png');
+    log.textContent=lang==='ru'?'2/3 Файлы отправлены. Сервер компилирует Android APK; это может занять несколько минут…':lang==='en'?'2/3 Files uploaded. The server is compiling the Android APK; this may take several minutes…':'2/3 Файлҳо фиристода шуданд. Сервер APK-и Android-ро месозад; ин метавонад чанд дақиқа гирад…';
+    const response=await fetch(endpoint+'/api/build',{method:'POST',body:form});
+    if(!response.ok){let message='Build server error '+response.status;try{const data=await response.json();message=data.error||message}catch(e){}throw new Error(message);}
+    const blob=await response.blob();if(!blob.size)throw new Error('Сервер файли APK-и холӣ баргардонд.');
+    const ct=response.headers.get('content-type')||'';if(ct.includes('application/json')){const t=await blob.text();let d={};try{d=JSON.parse(t)}catch(e){}throw new Error(d.error||'Сервер APK барнагардонд.');}
+    if(hasanexApkBlobUrl)URL.revokeObjectURL(hasanexApkBlobUrl);
+    hasanexApkBlobUrl=URL.createObjectURL(blob);window.hasanexLastApkBlob=blob;
+    const fileName=(project.name||'HASANEX-App').replace(/[^\p{L}\p{N}_-]+/gu,'-')+'.apk';
+    log.innerHTML='';
+    const done=document.createElement('div');done.className='notice success';done.textContent=lang==='ru'?'✅ APK готов! Размер: '+(blob.size/1024/1024).toFixed(2)+' MB':lang==='en'?'✅ APK is ready! Size: '+(blob.size/1024/1024).toFixed(2)+' MB':'✅ APK тайёр аст! Ҳаҷм: '+(blob.size/1024/1024).toFixed(2)+' MB';log.appendChild(done);
+    const download=document.createElement('a');download.href=hasanexApkBlobUrl;download.download=fileName;download.className='btn full';download.style.display='block';download.style.marginTop='10px';download.textContent=lang==='ru'?'⬇ Скачать APK на телефон':lang==='en'?'⬇ Download APK to phone':'⬇ APK-ро ба телефон зеркашӣ кун';log.appendChild(download);
+    const actions=document.createElement('div');actions.className='row';actions.style.marginTop='8px';
+    const share=document.createElement('button');share.className='btn secondary full';share.textContent=lang==='ru'?'↗ Поделиться APK':lang==='en'?'↗ Share APK':'↗ Мубодилаи APK';share.onclick=shareBuiltApk;actions.appendChild(share);
+    const folder=document.createElement('button');folder.className='btn ghost full';folder.textContent=lang==='ru'?'📁 Где найти файл?':lang==='en'?'📁 Find downloaded file':'📁 Файлро аз куҷо ёбам?';folder.onclick=()=>alert(lang==='ru'?'После скачивания откройте приложение «Файлы» → Downloads/Загрузки и нажмите APK. Браузер Android не разрешает веб-странице напрямую открывать системный установщик или папку.':lang==='en'?'After downloading, open Files → Downloads and tap the APK. Android browsers do not let a web page directly launch the system installer or browse the folder.':'Баъди зеркашӣ «Файлҳо» → Downloads/Боргириҳоро кушо ва APK-ро пахш кун. Браузери Android ба саҳифаи веб иҷозат намедиҳад, ки мустақим насбкунанда ё ҷузвдони системаро кушояд.');actions.appendChild(folder);log.appendChild(actions);
+    const hint=document.createElement('p');hint.className='muted';hint.textContent=lang==='ru'?'Для установки нажмите на скачанный APK в уведомлении браузера или в папке Downloads. Android может запросить разрешение на установку из этого источника.':lang==='en'?'To install, tap the downloaded APK in the browser notification or Downloads folder. Android may ask you to allow installs from this source.':'Барои насб APK-и зеркашишударо дар огоҳии браузер ё ҷузвдони Downloads пахш кун. Android метавонад иҷозати насб аз ин манбаъро пурсад.';log.appendChild(hint);
+    saveProject(true);
+  }catch(err){log.textContent=(lang==='ru'?'✕ Ошибка: ':lang==='en'?'✕ Error: ':'✕ Хато: ')+(err.message||String(err));}
+  finally{if(button){button.disabled=false;button.textContent=lang==='ru'?'📦 СОЗДАТЬ APK':lang==='en'?'📦 BUILD APK':'📦 СОХТАНИ APK';}}
+}
+async function shareBuiltApk(){
+  const blob=window.hasanexLastApkBlob;if(!blob)return alert('Аввал APK соз.');
+  const safe=(project.name||'HASANEX-App').replace(/[^\p{L}\p{N}_-]+/gu,'-')+'.apk';
+  const file=new File([blob],safe,{type:'application/vnd.android.package-archive'});
+  try{if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:project.name||'Android APK'});}else{const a=document.createElement('a');a.href=hasanexApkBlobUrl;a.download=safe;a.click();alert('Дар ин браузер мубодилаи файл дастгирӣ намешавад. APK зеркашӣ шуд; онро аз Downloads мубодила кун.');}}catch(e){if(e.name!=='AbortError')alert('Мубодила иҷро нашуд: '+e.message);}
+}
+async function buildZip(target='device'){try{
+if(!collectStep())return;
+let name=project.name.trim()||'My App',pkg=project.package;
+let perms=project.permissions.map(k=>permissionDefs.find(p=>p[0]===k)?.[3]).filter(Boolean);
+let manifestPerms=perms.map(p=>`    <uses-permission android:name="${p}" />`).join('\n');
+if(project.permissions.includes('location'))manifestPerms+='\n    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />';
+let manifest=`<manifest xmlns:android="http://schemas.android.com/apk/res/android"><uses-permission android:name="android.permission.INTERNET"/>${manifestPerms}
+<application android:allowBackup="true" android:label="${xml(name)}" android:icon="@drawable/ic_custom" android:roundIcon="@drawable/ic_custom" android:theme="@android:style/Theme.Material.${project.theme==='dark'?'NoActionBar':'Light.NoActionBar'}" android:usesCleartextTraffic="${project.contentType==='url'&&project.url.startsWith('http://')}"><activity android:name=".MainActivity" android:exported="true" android:screenOrientation="${project.orientation==='portrait'?'portrait':project.orientation==='landscape'?'landscape':'unspecified'}"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity></application></manifest>`;
+let java=`package ${pkg};
+import android.app.*;import android.os.*;import android.webkit.*;import androidx.webkit.WebViewAssetLoader;import android.view.*;import android.content.*;import android.net.*;import android.app.DownloadManager;import android.database.Cursor;import android.widget.*;import android.graphics.Color;import android.Manifest;import android.content.pm.PackageManager;
+public class MainActivity extends Activity{
+ WebView web; ValueCallback<Uri[]> upload; WebViewAssetLoader assetLoader; static final int FILE_REQ=44;
+ @Override public void onCreate(Bundle b){super.onCreate(b);${project.fullscreen?'getWindow().setFlags(1024,1024);':''} FrameLayout root=new FrameLayout(this);web=new WebView(this);root.addView(web,new FrameLayout.LayoutParams(-1,-1));${project.splash?'TextView splashView=new TextView(this);splashView.setText("'+xml(project.splashText||project.name)+'");splashView.setTextColor(Color.WHITE);splashView.setTextSize(24);splashView.setGravity(Gravity.CENTER);splashView.setBackgroundColor(Color.rgb(8,11,18));root.addView(splashView,new FrameLayout.LayoutParams(-1,-1));':''}setContentView(root);${project.keepScreenOn?'getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);':''}WebSettings s=web.getSettings();assetLoader=new WebViewAssetLoader.Builder().addPathHandler("/assets/",new WebViewAssetLoader.AssetsPathHandler(this)).build();s.setJavaScriptEnabled(${project.js});s.setDomStorageEnabled(${project.dom});${project.desktopMode?'s.setUserAgentString(s.getUserAgentString().replace("; wv", ""));s.setLoadWithOverviewMode(true);s.setUseWideViewPort(true);':''}s.setAllowFileAccess(false);s.setAllowContentAccess(false);s.setAllowFileAccessFromFileURLs(false);s.setAllowUniversalAccessFromFileURLs(false);s.setSupportZoom(${project.zoom!==false});s.setBuiltInZoomControls(${project.zoom!==false});s.setDisplayZoomControls(false);web.setWebViewClient(new WebViewClient(){@Override public android.webkit.WebResourceResponse shouldInterceptRequest(WebView v,WebResourceRequest r){android.webkit.WebResourceResponse response=assetLoader.shouldInterceptRequest(r.getUrl());return response!=null?response:super.shouldInterceptRequest(v,r);}@Override public void onPageFinished(WebView v,String url){super.onPageFinished(v,url);${project.splash?'root.removeView(splashView);':''}}@Override public boolean shouldOverrideUrlLoading(WebView v,WebResourceRequest r){Uri u=r.getUrl();if("http".equals(u.getScheme())||"https".equals(u.getScheme())){${project.external?'if(!u.getHost().equals("'+(project.contentType==='url'?new URL(project.url).host:'example.com')+'")){startActivity(new Intent(Intent.ACTION_VIEW,u));return true;}':''}}return false;}});web.setWebChromeClient(new WebChromeClient(){@Override public boolean onShowFileChooser(WebView v,ValueCallback<Uri[]> cb,FileChooserParams p){upload=cb;Intent i=p.createIntent();try{startActivityForResult(i,FILE_REQ);}catch(Exception e){upload=null;return false;}return true;}});${project.downloads ? 'web.setDownloadListener((url,ua,cd,mime,len)->{DownloadManager.Request r=new DownloadManager.Request(Uri.parse(url));r.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);String fn=URLUtil.guessFileName(url,cd,mime);r.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,fn);((DownloadManager)getSystemService(DOWNLOAD_SERVICE)).enqueue(r);Toast.makeText(this,\\"Download started\\",Toast.LENGTH_SHORT).show();});' : ''}web.loadUrl("${project.contentType==='url'?xml(project.url):'https://appassets.androidplatform.net/assets/www/'+String(project.startPage||'index.html').replace(/\\/g,'/')}");}
+ @Override protected void onActivityResult(int req,int res,Intent data){super.onActivityResult(req,res,data);if(req==FILE_REQ&&upload!=null){Uri[] r=WebChromeClient.FileChooserParams.parseResult(res,data);upload.onReceiveValue(r);upload=null;}}
+ @Override public void onBackPressed(){if(web!=null&&web.canGoBack())web.goBack();else super.onBackPressed();}
+}`;
+let gradle=`plugins { id 'com.android.application' version '8.7.3' }
+android { namespace '${pkg}'; compileSdk 35
+ defaultConfig { applicationId '${pkg}'; minSdk ${project.minSdk||23}; targetSdk 35; versionCode ${Math.max(1,parseInt(project.versionCode)||1)}; versionName '${xml(project.version||'1.0')}' }
+}`;
+let files=[
+{name:'settings.gradle',data:`pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }\ndependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS); repositories { google(); mavenCentral() } }\nrootProject.name = '${name.replace(/'/g,"")}'\ninclude ':app'\n`},
+{name:'build.gradle',data:`plugins { id 'com.android.application' version '8.7.3' apply false }\n`},
+{name:'gradle.properties',data:'org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\nandroid.useAndroidX=true\n'},
+{name:'app/build.gradle',data:gradle+`\ndependencies { implementation 'androidx.webkit:webkit:1.12.1' }\n`},
+{name:'app/src/main/AndroidManifest.xml',data:manifest},
+{name:'app/src/main/java/'+pkg.replace(/\./g,'/')+'/MainActivity.java',data:java},
+{name:'app/src/main/res/values/strings.xml',data:`<resources><string name="app_name">${xml(name)}</string></resources>`},
+{name:'.github/workflows/build-apk.yml',data:`name: Build APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Install Android SDK packages
+        run: sdkmanager 'platform-tools' 'platforms;android-35' 'build-tools;35.0.0'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+          cache-provider: basic
+      - name: Build installable debug APK
+        run: gradle --no-daemon --stacktrace assembleDebug
+      - name: Verify APK exists and is not empty
+        run: test -s app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload APK as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${name.replace(/[^A-Za-z0-9_-]/g,'-')}-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
+      - name: Publish direct APK download in GitHub Releases
+        env:
+          GH_TOKEN: \${{ github.token }}
+        shell: bash
+        run: |
+          TAG="apk-build-\${GITHUB_RUN_ID}"
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$APK" --clobber
+          else
+            gh release create "$TAG" "$APK" --title "${name.replace(/"/g,'')} APK build" --notes "Installable Android Debug APK generated by GitHub Actions. Test build, not a Google Play release." --target "\${GITHUB_SHA}"
+          fi
+`},,
+{name:'BUILD_INFO.txt',data:`HTML to APK · HASANEX PRO 14.1\nBuild type: Debug APK\nAndroid Gradle Plugin: 8.7.3\nGradle: 8.9\nJDK: 17\nLocal assets: AndroidX WebViewAssetLoader\n`},
+{name:'README_TJ.md',data:`# ${name} — лоиҳаи Android барои сохтани APK
+
+## Чӣ тавр APK-и насбшаванда гирифтан мумкин аст
+1. ZIP-ро дар телефон ё компютер пурра Extract/Кушо кун.
+2. Ба GitHub даро ва repository-и нав соз (масалан, ${name.replace(/[^A-Za-z0-9_-]/g,'-').toLowerCase()}).
+3. Ҳамаи файлҳо ва папкаҳои дохили ZIP-ро ба решаи repository бор кун. Худи ZIP-ро ҳамчун як файл бор накун. Папкаи пинҳонии \.github низ бояд бор шавад; дар он build-apk.yml ҷойгир аст.
+4. Дар repository бахши Actions-ро кушо. Агар GitHub иҷозат пурсад, workflow-ро фаъол кун.
+5. Workflow-и **Build APK**-ро интихоб карда **Run workflow**-ро пахш кун. Ҳангоми бор кардани файлҳо ба main/master, сохтмон худкор оғоз мешавад.
+6. То анҷоми сабз шудани workflow интизор шав. Баъд ба **Releases** даро ва файли \.apk-ро зеркашӣ кун. Нусхаи дигар дар Actions → Build APK → Artifacts низ ҳаст (он ZIP мебошад, ки APK дар дохилаш аст).
+7. APK-ро дар телефон кушо ва **Install**-ро пахш кун. Агар талаб шавад, барои браузер ё Files иҷозати **Install unknown apps**-ро фаъол кун.
+
+## Муҳим
+- Ин Debug APK-и воқеан насбшаванда аст; барои санҷиш. Барои Google Play бояд Release APK/AAB-и бо калиди шахсӣ имзошуда омода карда шавад.
+- Агар Actions хато диҳад, дар саҳифаи workflow қадами сурхро кушо ва матни хатогиро бин. То сабз шудани Build APK ҳанӯз сохта нашудааст.
+- HTML → APK PRO ZIP-и Android Studio месозад; GitHub Actions APK-ро дар сервер месозад.
+`},
+{name:'app/src/main/res/drawable/ic_launcher.xml',data:`<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="48dp" android:height="48dp" android:viewportWidth="48" android:viewportHeight="48"><path android:fillColor="${project.accent}" android:pathData="M8,0h32a8,8 0,0 1,8 8v32a8,8 0,0 1,-8 8h-32a8,8 0,0 1,-8 -8v-32a8,8 0,0 1,8 -8z"/><path android:fillColor="#FFFFFF" android:pathData="M24,7 L28,20 L41,20 L30,28 L34,41 L24,33 L14,41 L18,28 L7,20 L20,20 Z"/></vector>`}
+];
+if(target==='device'){
+  files=files.filter(f=>f.name!=='.github/workflows/build-apk.yml' && f.name!=='README_TJ.md');
+  files.push({name:'README_TJ.md',data:`# ${name} — сохтани APK дар худи телефон (бе GitHub)
+
+## Чӣ лозим аст
+- Барномаи Code on the Go барои Android: https://www.appdevforall.org/code-on-the-go/
+- Android 9 ё навтар; барои насби аввал интернет ва фазои холии кофӣ лозим мешавад.
+- Ин лоиҳа Android Gradle Plugin 8.7.3 ва Gradle 8.9 истифода мебарад.
+
+## Қадамҳо
+1. Code on the Go-ро аз саҳифаи расмӣ гир ва насб кун.
+2. Бори аввал build tools / Android SDK-ро дар худи Code on the Go насб кун. Ин метавонад чанд GB хотира ва интернет талаб кунад.
+3. Ин ZIP-ро пурра Extract кун, то ҷузвдоне пайдо шавад, ки дар дохилаш settings.gradle ва папкаи app ҳастанд.
+4. Code on the Go → Open existing project → ҳамин ҷузвдонро интихоб кун.
+5. То анҷоми Gradle Sync интизор шав. Баъд Build ё Quick Run / assembleDebug-ро пахш кун.
+6. APK дар app/build/outputs/apk/debug/app-debug.apk сохта мешавад. Вақте IDE пешниҳод мекунад, Install-ро пахш кун.
+
+## Муҳим
+- Барои ин роҳ аккаунти GitHub лозим нест ва файлҳои .github дохил карда нашудаанд.
+- HASANEX дар браузер APK-ро компиляция намекунад; он лоиҳаи Gradle-ро месозад. Code on the Go дар телефон APK месозад.
+- Ин Debug APK барои санҷиш аст. Барои Google Play калиди Release ва имзои шахсӣ лозиманд.
+`});
+  files.push({name:'README_RU.md',data:`# ${name} — сборка APK на телефоне (без GitHub)
+
+## Требования
+- Code on the Go для Android: https://www.appdevforall.org/code-on-the-go/
+- Android 9 или новее; для первоначальной установки нужны интернет и свободное место.
+- Проект использует Android Gradle Plugin 8.7.3 и Gradle 8.9.
+
+## Шаги
+1. Скачайте и установите Code on the Go с официальной страницы.
+2. При первом запуске установите build tools / Android SDK внутри Code on the Go. Это может потребовать несколько GB памяти и интернет.
+3. Полностью распакуйте ZIP. Найдите папку с settings.gradle и папкой app.
+4. В Code on the Go выберите Open existing project и укажите эту папку.
+5. Дождитесь Gradle Sync, затем нажмите Build или Quick Run / assembleDebug.
+6. APK появится в app/build/outputs/apk/debug/app-debug.apk. Когда IDE предложит установить приложение, нажмите Install.
+
+Аккаунт GitHub не нужен. HASANEX готовит Gradle-проект, а Code on the Go компилирует APK на телефоне. Это Debug APK для тестирования; для Google Play нужна Release-подпись.
+`});
+  files.push({name:'README_EN.md',data:`# ${name} — build an APK on your phone (no GitHub)
+
+## Requirements
+- Code on the Go for Android: https://www.appdevforall.org/code-on-the-go/
+- Android 9 or later; internet and free storage are needed for the initial setup.
+- This project uses Android Gradle Plugin 8.7.3 and Gradle 8.9.
+
+## Steps
+1. Download and install Code on the Go from its official page.
+2. On first launch, install the build tools / Android SDK inside Code on the Go. This may require several GB of storage and an internet connection.
+3. Fully extract this ZIP. Locate the folder containing settings.gradle and the app folder.
+4. In Code on the Go, choose Open existing project and select that folder.
+5. Wait for Gradle Sync, then tap Build or Quick Run / assembleDebug.
+6. The APK is created at app/build/outputs/apk/debug/app-debug.apk. Accept the IDE's Install prompt when shown.
+
+No GitHub account is needed. HASANEX prepares the Gradle project; Code on the Go compiles the APK on the phone. This is a debug APK for testing; Google Play needs release signing.
+`});
+  files.push({name:'gradle/wrapper/gradle-wrapper.properties',data:'distributionBase=GRADLE_USER_HOME\ndistributionPath=wrapper/dists\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.9-bin.zip\nnetworkTimeout=10000\nvalidateDistributionUrl=true\nzipStoreBase=GRADLE_USER_HOME\nzipStorePath=wrapper/dists\n'});
+  files.push({name:'BUILD_LOCAL.txt',data:'Local Android build: open this project in Code on the Go. Android Gradle Plugin 8.7.3; Gradle 8.9; JDK 17+; task: assembleDebug; output: app/build/outputs/apk/debug/app-debug.apk. No GitHub workflow is included in this package.\n'});
+} else {
+  files.push({name:'README_RU.md',data:'Сборка через GitHub Actions: загрузите файлы проекта в repository, откройте Actions → Build APK → Run workflow, затем скачайте APK из Artifacts или Releases.\n'});
+  files.push({name:'README_EN.md',data:'Build with GitHub Actions: upload the project files to a repository, open Actions → Build APK → Run workflow, then download the APK from Artifacts or Releases.\n'});
+}
+const iconBytes=await makeEmojiIcon();files.push({name:'app/src/main/res/drawable/ic_custom.png',data:iconBytes});
+if(project.contentType==='url'&&project.url){files=files.filter(f=>!f.name.startsWith('app/src/main/assets/www/'));}
+else{
+if(selectedFiles.length){for(let f of selectedFiles){let path=f.path.replace(/^\//,'');files.push({name:'app/src/main/assets/www/'+path,data:new Uint8Array(f.data)})}}
+else if(htmlText)files.push({name:'app/src/main/assets/www/index.html',data:htmlText});
+if(!files.some(f=>f.name.endsWith('/www/index.html')))files.push({name:'app/src/main/assets/www/index.html',data:'<!doctype html><html><meta charset="utf-8"><h1>Hello from your app</h1></html>'});
+}
+
+$('buildLog').textContent=(lang==='ru'?'✓ Настройки проекта проверены\n✓ Android Manifest создан\n✓ WebView Activity создана\n✓ Файлы сайта добавлены\n':lang==='en'?'✓ Project settings validated\n✓ Android manifest generated\n✓ WebView activity generated\n✓ Website files packaged\n':'✓ Танзимоти лоиҳа санҷида шуд\n✓ Android Manifest сохта шуд\n✓ WebView Activity сохта шуд\n✓ Файлҳои сайт илова шуданд\n')+(target==='device'?(lang==='ru'?'✓ Добавлена инструкция локальной сборки\n':lang==='en'?'✓ On-device build instructions added\n':'✓ Дастури сохтани маҳаллӣ илова шуд\n'):(lang==='ru'?'✓ Настроен GitHub Actions workflow\n':lang==='en'?'✓ GitHub Actions workflow configured\n':'✓ GitHub Actions workflow танзим шуд\n'))+(lang==='ru'?'Создание ZIP…':lang==='en'?'Creating ZIP…':'ZIP сохта мешавад…');
+let blob;try{blob=zipStore(files)}catch(err){$('buildLog').textContent+='\n✕ ZIP error: '+err.message;alert('ZIP сохта нашуд: '+err.message);return}
+// Android Chrome may block a download triggered after async ZIP generation.
+// Keep the Blob URL alive and show a real user-tap download link instead.
+if(window.hasanexZipUrl){try{URL.revokeObjectURL(window.hasanexZipUrl)}catch(e){}}
+window.hasanexZipUrl=URL.createObjectURL(blob);
+const zipName=name.replace(/[^a-zA-Z0-9_-]/g,'_')+(target==='device'?'_ON_DEVICE_BUILD':'_GITHUB_BUILD')+'_Android_Project.zip';
+$('buildLog').textContent+='\n✓ '+(lang==='ru'?'ZIP создан: ':lang==='en'?'ZIP created: ':'ZIP сохта шуд: ')+files.length+(lang==='ru'?' файлов\n':lang==='en'?' files\n':' файл\n')+(target==='device'?(lang==='ru'?'Далее: распакуйте ZIP → Code on the Go → Open existing project → выберите папку проекта → Build / Quick Run. APK появится в app/build/outputs/apk/debug/app-debug.apk. HASANEX в браузере не компилирует APK; это делает Code on the Go на телефоне.':lang==='en'?'Next: extract the ZIP → Code on the Go → Open existing project → select the project folder → Build / Quick Run. The APK will be at app/build/outputs/apk/debug/app-debug.apk. HASANEX does not compile APKs in the browser; Code on the Go does this on the phone.':'Қадами баъдӣ: ZIP-ро кушо → Code on the Go → Open existing project → ҷузвдони лоиҳаро интихоб кун → Build / Quick Run. APK дар app/build/outputs/apk/debug/app-debug.apk ҳосил мешавад. HASANEX дар браузер APK намесозад; Code on the Go онро дар телефон компиляция мекунад.'):(lang==='ru'?'Далее: загрузите ZIP в GitHub repository → Actions → Build APK → Run workflow. Затем скачайте APK из Releases или Artifacts.':lang==='en'?'Next: upload the ZIP to a GitHub repository → Actions → Build APK → Run workflow. Then download the APK from Releases or Artifacts.':'Қадами баъдӣ: ZIP-ро ба GitHub repository бор кун → Actions → Build APK → Run workflow. Баъд APK-ро аз Releases ё Artifacts гир.'));
+const downloadLink=document.createElement('a');downloadLink.href=window.hasanexZipUrl;downloadLink.download=zipName;downloadLink.className='btn full';downloadLink.style.display='block';downloadLink.style.textAlign='center';downloadLink.style.textDecoration='none';downloadLink.style.marginTop='16px';downloadLink.style.padding='18px';downloadLink.style.fontSize='18px';downloadLink.style.fontWeight='bold';downloadLink.style.background='#16a34a';downloadLink.style.color='#fff';downloadLink.textContent=lang==='ru'?'⬇ НАЖМИТЕ ЗДЕСЬ — СКАЧАТЬ ZIP':lang==='en'?'⬇ TAP HERE — DOWNLOAD ZIP':'⬇ ҲОЗИР ПАХШ КУН — ZIP-РО ГИР';$('buildLog').appendChild(downloadLink);
+const shareBtn=document.createElement('button');shareBtn.className='btn secondary full';shareBtn.style.marginTop='8px';shareBtn.textContent=lang==='ru'?'Поделиться ZIP…':lang==='en'?'Share ZIP…':'📤 ZIP-ро фиристодан';shareBtn.onclick=async()=>{try{const file=new File([blob],zipName,{type:'application/zip'});if(navigator.canShare&&navigator.canShare({files:[file]}))await navigator.share({files:[file],title:zipName});else alert(lang==='ru'?'Ваш браузер не поддерживает отправку файла. Нажмите зелёную кнопку скачивания.':lang==='en'?'File sharing is not supported here. Tap the green download button.':'Браузер фиристодани файлро дастгирӣ намекунад. Тугмаи сабзи зеркаширо пахш кун.')}catch(e){if(e.name!=='AbortError')alert('Share error: '+(e.message||e))}};$('buildLog').appendChild(shareBtn);
+$('buildLog').scrollIntoView({behavior:'smooth',block:'center'});downloadLink.focus();
+saveProject(true);
+}catch(err){console.error('HASANEX ZIP build failed:',err);const log=document.getElementById('buildLog');if(log)log.textContent='❌ Лоиҳа сохта нашуд: '+(err&&err.message?err.message:String(err))+'\nСаҳифаро нав кун ва боз кӯшиш кун. Агар боз хато шавад, аз ин паём скриншот фирист.';alert('ZIP сохта нашуд: '+(err&&err.message?err.message:String(err)))}}
+function xml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;')}
+// Friendly runtime diagnostics: report errors without exposing API keys or user file contents.
+window.addEventListener('error',e=>{console.error('HASANEX runtime error:',e.message);const box=document.getElementById('recentBox');if(box&&!box.dataset.runtimeNotice){box.dataset.runtimeNotice='1';const note=document.createElement('div');note.className='notice';note.textContent='Дар барнома хатои техникӣ рӯй дод. Саҳифаро нав кун; агар такрор шавад, лоиҳаро нусхабардорӣ карда, хабар деҳ.';box.appendChild(note)}});
+window.addEventListener('unhandledrejection',e=>{console.error('HASANEX async error:',e.reason);});
+// HASANEX 14.1: best-effort UI protection against casual copying.
+(function(){
+  document.body.classList.add('hasanex-guard');
+  const editable = el => !!(el && (el.closest('input,textarea,select,[contenteditable="true"],.preview,iframe') || el.isContentEditable));
+  document.addEventListener('contextmenu', e => { if(!editable(e.target)) e.preventDefault(); });
+  document.addEventListener('dragstart', e => { if(!editable(e.target)) e.preventDefault(); });
+  document.addEventListener('selectstart', e => { if(!editable(e.target)) e.preventDefault(); });
+  document.addEventListener('copy', e => { if(!editable(e.target) && !window.getSelection()?.toString()) e.preventDefault(); });
+  document.addEventListener('cut', e => { if(!editable(e.target)) e.preventDefault(); });
+  document.addEventListener('keydown', e => {
+    const k=(e.key||'').toLowerCase(), mod=e.ctrlKey||e.metaKey;
+    if(e.key==='F12' || (mod && e.shiftKey && ['i','j','c'].includes(k)) || (mod && ['u','s'].includes(k))){
+      if(!editable(e.target)){e.preventDefault();e.stopPropagation();}
+    }
+  }, true);
+})();
+setLang(lang);updateAITaskHelp();restoreEditorDraft();$('codeEditor').addEventListener('input',()=>{clearTimeout(editorDraftTimer);editorDraftTimer=setTimeout(saveEditorDraft,500)});renderRecent();previewEditor();
+</script>
+<div id="appPreviewModal" class="modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);padding:12px;align-items:center;justify-content:center">
+  <div style="width:min(100%,900px);height:min(92vh,850px);background:#111827;border:1px solid #334155;border-radius:18px;display:flex;flex-direction:column;overflow:hidden">
+    <div class="row" style="padding:12px 14px;justify-content:space-between;border-bottom:1px solid #334155">
+      <b>👁 Пешнамоиши барнома</b>
+      <div class="row"><button class="btn ghost" onclick="refreshAppPreview()">↻ Навсозӣ</button><button class="btn danger" onclick="closeAppPreview()">✕ Пӯшидан</button></div>
+    </div>
+    <div id="previewStatus" class="muted" style="padding:7px 14px;font-size:12px">Пешнамоиш дар дохили ҳамин барнома.</div>
+    <iframe id="appPreviewFrame" title="Пешнамоиши барнома" sandbox="allow-scripts allow-forms allow-modals allow-popups" style="width:100%;flex:1;border:0;background:#fff"></iframe>
+  </div>
+</div>
+
+</body></html>
